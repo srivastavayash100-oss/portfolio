@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix | Yash Srivastava - Official Masterpiece</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Plus+Jakarta+Sans:wght@800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --nf-red: #E50914;
+      --nf-black: #141414;
+      --nf-gray: #181818;
+      --ease-netflix: cubic-bezier(0.5, 0, 0.1, 1);
+      /* NEW accent colors for extra styling */
+      --nf-neon: #ff3b6a;
+      --nf-cyan: #3ad9ff;
+      --nf-gold: #f5b300;
+    }
+
+    * {
+      box-sizing: border-box;
+      outline: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #181818 0, #000000 55%);
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      overflow: hidden;
+    }
+
+    /* INTRO – more stylish */
+    #intro-stage {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 0%, #320000 0, #000 45%),
+        radial-gradient(circle at 90% 100%, #060622 0, #000 55%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    #intro-stage::before {
+      content: "";
+      position: absolute;
+      width: 170%;
+      height: 170%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(229,9,20,0.45) 0, transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(255,255,255,0.2) 0, transparent 55%);
+      opacity: 0;
+      mix-blend-mode: screen;
+      animation: introGlow 4s ease-out forwards;
+    }
+
+    #intro-stage::after {
+      content: "";
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.16) 0, transparent 55%),
+        radial-gradient(circle, rgba(255,255,255,0.10) 0, transparent 55%),
+        radial-gradient(circle, rgba(255,255,255,0.06) 0, transparent 55%);
+      background-size: 260px 260px, 220px 220px, 300px 300px;
+      background-position: 0 0, 80px 120px, -120px 60px;
+      opacity: 0;
+      animation: dustDrift 4.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    .intro-container {
+      width: 360px;
+      animation: netflixZoom 4.5s var(--ease-netflix) forwards;
+      position: relative;
+      text-align: center;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .intro-container::after {
+      content: "";
+      position: absolute;
+      bottom: -18px;
+      left: 10%;
+      width: 80%;
+      height: 3px;
+      background: radial-gradient(circle, rgba(229,9,20,0.9) 0, transparent 65%);
+      filter: blur(8px);
+      opacity: 0;
+      animation: baseGlow 3s ease-out 0.6s forwards;
+    }
+
+    .intro-logo-wrap {
+      padding: 16px 18px 10px 18px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 0% 0%, rgba(229,9,20,0.5) 0, rgba(0,0,0,0.5) 50%, rgba(255,255,255,0.08) 100%);
+      box-shadow:
+        0 22px 60px rgba(0,0,0,0.9),
+        0 0 30px rgba(229,9,20,0.8);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(22px);
+    }
+
+    .intro-container svg {
+      width: 100%;
+      filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.6));
+    }
+
+    .intro-title {
+      margin-top: 18px;
+      font-size: 1.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .intro-subtitle {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c5c5d8;
+    }
+
+    .intro-tagline {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #a0a0c0;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: taglineIn 1.2s ease-out 1.4s forwards;
+    }
+
+    .intro-timestamp {
+      margin-top: 4px;
+      font-size: 0.7rem;
+      color: #777895;
+      opacity: 0;
+      animation: introSubIn 1.2s ease-out 2s forwards;
+    }
+
+    @keyframes netflixZoom {
+      0%   { transform: scale(0.65); opacity: 0; filter: blur(20px); }
+      15%  { transform: scale(1);   opacity: 1; filter: blur(0); }
+      70%  { transform: scale(1.05); opacity: 1; }
+      80%  { transform: scale(1);   opacity: 1; }
+      100% { transform: scale(2.6); opacity: 0; filter: blur(40px); visibility: hidden; }
+    }
+    @keyframes introGlow {
+      0%   { opacity: 0; transform: scale(1); }
+      35%  { opacity: 0.8; transform: scale(1.04); }
+      70%  { opacity: 0.45; transform: scale(1.08); }
+      100% { opacity: 0; transform: scale(1.12); }
+    }
+    @keyframes dustDrift {
+      0%   { opacity: 0; transform: translate3d(0,15px,0) scale(1); }
+      30%  { opacity: 0.4; }
+      80%  { opacity: 0.25; transform: translate3d(-16px,-10px,0) scale(1.05); }
+      100% { opacity: 0; transform: translate3d(-20px,-20px,0) scale(1.08); }
+    }
+    @keyframes baseGlow {
+      0%   { opacity: 0; transform: scaleX(0.7); }
+      40%  { opacity: 1; transform: scaleX(1); }
+      100% { opacity: 0; transform: scaleX(1.1); }
+    }
+    @keyframes taglineIn { 0% {opacity:0;transform:translateY(8px);}100%{opacity:1;transform:translateY(0);} }
+    @keyframes introSubIn { 0% {opacity:0;}100%{opacity:1;} }
+
+    /* GENERIC SCREENS */
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: none;
+      background: var(--nf-black);
+      z-index: 100;
+    }
+    .screen.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* EXTRA STYLING: WHO’S WATCHING */
+    .profile-gate {
+      position: relative;
+      display: inline-block;
+      padding: 40px 70px 50px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.09) 0, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(229,9,20,0.18) 0, transparent 55%),
+        linear-gradient(135deg, rgba(15,15,15,0.96), rgba(10,10,10,0.98));
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.9),
+        0 0 50px rgba(229,9,20,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      backdrop-filter: blur(26px);
+    }
+
+    .profile-gate::before,
+    .profile-gate::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,59,106,0.18) 0, transparent 60%);
+      filter: blur(6px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .profile-gate::before {
+      top: -180px;
+      left: -150px;
+    }
+    .profile-gate::after {
+      bottom: -180px;
+      right: -180px;
+      background: radial-gradient(circle, rgba(58,217,255,0.18) 0, transparent 60%);
+    }
+
+    .profile-gate h1 {
+      font-size: 3.5vw;
+      font-weight: 400;
+      margin-bottom: 2vw;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-gate h1 span.accent-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-left: 8px;
+      background: radial-gradient(circle, var(--nf-neon), transparent 70%);
+      box-shadow: 0 0 16px rgba(255,59,106,0.9);
+    }
+
+    .profile-gate-sub {
+      font-size: 0.9rem;
+      color: #b5b5c7;
+      margin-bottom: 30px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-orbit {
+      position: absolute;
+      inset: -18%;
+      border-radius: 28px;
+      border: 1px dashed rgba(255,255,255,0.05);
+      pointer-events: none;
+      animation: profileOrbit 26s linear infinite;
+    }
+    .profile-orbit::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--nf-gold);
+      box-shadow: 0 0 18px rgba(245,179,0,0.85);
+      top: 10%;
+      right: 16%;
+    }
+
+    @keyframes profileOrbit {
+      0% { transform: rotate(0deg); opacity: 0.7; }
+      50% { opacity: 0.2; }
+      100% { transform: rotate(360deg); opacity: 0.7; }
+    }
+
+    .profile-card {
+      width: 12vw;
+      min-width: 160px;
+      text-align: center;
+      cursor: pointer;
+      animation: scaleIn 0.6s var(--ease-netflix);
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar-box {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 18px;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+      transition: 0.25s;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(58,217,255,0.3), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(229,9,20,0.35), transparent 55%),
+        #101015;
+      margin-bottom: 15px;
+      position: relative;
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.95);
+    }
+
+    .avatar-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: 0.35s var(--ease-netflix);
+    }
+
+    .profile-card:hover .avatar-box {
+      border-color: rgba(255,255,255,0.75);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow:
+        0 28px 80px rgba(0,0,0,0.98),
+        0 0 40px rgba(255,59,106,0.7);
+    }
+
+    .profile-card:hover .avatar-box img {
+      transform: scale(1.08);
+      filter: saturate(1.2);
+    }
+
+    .profile-card:hover .avatar-box::after {
+      opacity: 1;
+    }
+
+    .profile-name-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.06), transparent 60%);
+      font-size: 0.85rem;
+      color: #d0d0e0;
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-name-pill span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #00ff95, transparent 75%);
+      box-shadow: 0 0 12px rgba(0,255,149,0.9);
+    }
+
+    .profile-hint {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #85859a;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes scaleIn { from {transform:scale(0.8);opacity:0;} to {transform:scale(1);opacity:1;} }
+
+    /* HOME */
+    #home-screen {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      height: 100vh;
+      padding-bottom: 120px;
+      display: none;
+      background:
+        radial-gradient(circle at 0% 0%, #1f1015 0, #050307 45%),
+        radial-gradient(circle at 100% 100%, #060813 0, #000 55%);
+      position: relative;
+    }
+    #home-screen::-webkit-scrollbar { display: none; }
+
+    /* HOME: floating gradient orbs */
+    .home-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(45px);
+      opacity: 0.35;
+      z-index: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .home-orb.orb-1 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(229,9,20,0.7), transparent 65%);
+      top: 10%;
+      left: -6%;
+      animation: floatOrb1 22s ease-in-out infinite alternate;
+    }
+    .home-orb.orb-2 {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(58,217,255,0.7), transparent 65%);
+      bottom: 18%;
+      right: -4%;
+      animation: floatOrb2 26s ease-in-out infinite alternate;
+    }
+    .home-orb.orb-3 {
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(245,179,0,0.7), transparent 65%);
+      bottom: 5%;
+      left: 18%;
+      animation: floatOrb3 28s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatOrb1 {
+      0% { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(40px,50px,0); }
+    }
+    @keyframes floatOrb2 {
+      0% { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(-40px,-40px,0); }
+    }
+    @keyframes floatOrb3 {
+      0% { transform: translate3d(0,0,0); }
+      100% { transform: translate3d(0,-50px,0); }
+    }
+
+    .navbar {
+      height: 68px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      display: flex;
+      align-items: center;
+      padding: 0 4%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+      z-index: 1000;
+      transition: 0.4s;
+      backdrop-filter: blur(14px);
+    }
+    .navbar.scrolled-nav {
+      background: rgba(10,10,10,0.97) !important;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.9);
+    }
+    .nav-logo {
+      color: var(--nf-red);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-right: 25px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: #e5e5e5;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    .nav-links span {
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+    .nav-links span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--nf-red), var(--nf-neon));
+      transition: width 0.3s var(--ease-netflix);
+    }
+    .nav-links span:hover {
+      color: #fff;
+    }
+    .nav-links span:hover::after {
+      width: 100%;
+    }
+
+    .billboard {
+      height: 90vh;
+      width: 100%;
+      position: relative;
+      background:
+        linear-gradient(77deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 85%),
+        url("https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1600") center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 4%;
+      overflow: hidden;
+    }
+
+    /* extra overlay layers on billboard */
+    .billboard::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(229,9,20,0.25), transparent 60%),
+        radial-gradient(circle at 90% 10%, rgba(58,217,255,0.18), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .billboard-noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      mix-blend-mode: soft-light;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      pointer-events: none;
+    }
+
+    .billboard h1 {
+      font-family: "Plus Jakarta Sans";
+      font-size: 6vw;
+      margin: 0;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px #000;
+      position: relative;
+      z-index: 2;
+    }
+    .billboard h1 span.glow-chip {
+      display: inline-block;
+      font-size: 1vw;
+      margin-left: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.18), transparent 60%);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+    }
+
+    .billboard p {
+      max-width: 520px;
+      font-size: 1.2vw;
+      line-height: 1.4;
+      margin: 1.5vw 0;
+      color: #ccc;
+      position: relative;
+      z-index: 2;
+    }
+    .billboard-meta {
+      font-size: 0.9vw;
+      color: #999;
+      margin-bottom: 1vw;
+      position: relative;
+      z-index: 2;
+    }
+    .billboard-tags span {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 10px;
+      font-size: 0.8vw;
+      color: #bbb;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(16px);
+    }
+
+    .billboard-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1vw;
+      position: relative;
+      z-index: 2;
+    }
+    .billboard-buttons button {
+      padding: 0.8vw 2.2vw;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1vw;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+      transition: transform 0.2s var(--ease-netflix), box-shadow 0.2s var(--ease-netflix), background 0.2s, color 0.2s;
+    }
+    .btn-play {
+      background: #fff;
+      color: #000;
+    }
+    .btn-play:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.85);
+      background: #f7f7f7;
+    }
+    .btn-more {
+      background: rgba(109,109,110,0.7);
+      color: #fff;
+    }
+    .btn-more:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+      background: rgba(109,109,110,0.95);
+    }
+
+    .main-view {
+      margin-top: -10vw;
+      position: relative;
+      z-index: 10;
+    }
+
+    .row {
+      padding-left: 4%;
+      margin-bottom: 3.5vw;
+      position: relative;
+      z-index: 2;
+    }
+    .row-header {
+      font-size: 1.4vw;
+      font-weight: 700;
+      color: #e5e5e5;
+      margin-bottom: 0.4em;
+    }
+    .row-sub {
+      font-size: 0.9vw;
+      color: #a3a3a3;
+      margin-bottom: 0.6em;
+      max-width: 620px;
+    }
+
+    .rail {
+      display: flex;
+      gap: 0.6vw;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 1.2vw 0;
+      position: relative;
+    }
+    .rail::-webkit-scrollbar { display: none; }
+
+    .card {
+      min-width: 15vw;
+      height: 9vw;
+      border-radius: 12px;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition:
+        transform 0.35s var(--ease-netflix),
+        box-shadow 0.35s var(--ease-netflix),
+        z-index 0.35s,
+        filter 0.35s var(--ease-netflix);
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(0,0,0,0.4), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s var(--ease-netflix);
+    }
+    .card:hover {
+      transform: scale(1.45) translateY(-8%);
+      z-index: 60;
+      box-shadow: 0 22px 45px rgba(0,0,0,0.95);
+      filter: saturate(1.2);
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card-meta {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 10px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 0.25s;
+      font-size: 0.8vw;
+      font-weight: 600;
+      text-align: left;
+    }
+    .card:hover .card-meta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CATALOGS */
+    .catalog-screen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, #1a1015 0, #050307 50%);
+      z-index: 1500;
+      display: none;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .catalog-screen.active {
+      display: flex;
+      animation: fadeIn 0.5s var(--ease-netflix);
+    }
+    .catalog-content {
+      padding: 100px 4%;
+    }
+    .gateway-container {
+      display: flex;
+      gap: 2vw;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    /* DETAIL SUB-SCREENS */
+    .sub-screen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, #151018 0, #050307 55%);
+      z-index: 2000;
+      display: none;
+      padding: 7vw 10%;
+      overflow-y: auto;
+    }
+    .sub-screen.active {
+      display: block;
+      animation: slideUp 0.6s var(--ease-netflix);
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      background: none;
+      border: 2.5px solid #fff;
+      color: #fff;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      backdrop-filter: blur(12px);
+      background-color: rgba(0,0,0,0.45);
+      transition: 0.25s;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.95);
+    }
+
+    .section-h {
+      color: var(--nf-red);
+      font-size: 3.5vw;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+    .block-h {
+      font-size: 1.8vw;
+      font-weight: 700;
+      margin: 40px 0 20px 0;
+      border-left: 4px solid var(--nf-red);
+      padding-left: 15px;
+    }
+    .content-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .item-card {
+      background: #222;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+      cursor: pointer;
+      line-height: 1.4;
+      border-bottom: 3px solid transparent;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.7);
+    }
+    .item-card:hover {
+      background: #333;
+      border-color: var(--nf-red);
+      transform: translateY(-5px);
+    }
+    .item-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--nf-red);
+    }
+    .detail-p {
+      max-width: 780px;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #e5e5e5;
+      margin-bottom: 1.5rem;
+    }
+
+    /* MUTE BUTTON */
+    #mute-btn {
+      position: fixed;
+      bottom: 35px;
+      right: 35px;
+      z-index: 10000;
+      background: rgba(0,0,0,0.6);
+      border: 1.5px solid #555;
+      color: #fff;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.85);
+      backdrop-filter: blur(14px);
+    }
+    #mute-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .billboard {
+        height: 80vh;
+        padding: 20vh 6% 0 6%;
+      }
+      .billboard h1 {
+        font-size: 12vw;
+      }
+      .billboard p {
+        font-size: 3.5vw;
+        max-width: 80%;
+      }
+      .billboard-buttons button {
+        font-size: 3vw;
+        padding: 2.4vw 5vw;
+      }
+      .row-header {
+        font-size: 4vw;
+      }
+      .row-sub {
+        font-size: 3vw;
+      }
+      .card {
+        min-width: 55vw;
+        height: 30vw;
+      }
+      .card-meta {
+        font-size: 3vw;
+      }
+      .profile-gate {
+        padding: 30px 24px 36px;
+        border-radius: 22px;
+      }
+      .profile-gate h1 {
+        font-size: 7vw;
+      }
+      .navbar {
+        padding: 0 6%;
+      }
+      .section-h {
+        font-size: 9vw;
+      }
+      .back-btn {
+        top: 20px;
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- SOUND -->
+  <button id="mute-btn">🔇</button>
+  <audio id="tudum" src="https://assets.mixkit.co/sfx/preview/mixkit-cinematic-impact-hit-1445.mp3"></audio>
+
+  <!-- INTRO -->
+  <section id="intro-stage">
+    <div class="intro-container">
+      <div class="intro-logo-wrap">
+        <svg viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0H0V100H12V0Z" fill="#E50914" />
+          <path d="M48 0H60V100H48V0Z" fill="#E50914" />
+          <path d="M12 0L48 100V75L22 0H12Z" fill="#B20710" />
+        </svg>
+      </div>
+      <div class="intro-title">YASH SRIVASTAVA</div>
+      <div class="intro-subtitle">ENGINEERING · PROJECT SERIES</div>
+      <div class="intro-tagline">Quiet consistency, clear fundamentals, and hands‑on projects.</div>
+      <div class="intro-timestamp">B.Tech ECE · JIIT Noida</div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="screen" id="profile-screen">
+    <div class="profile-gate" style="text-align: center;">
+      <div class="profile-orbit"></div>
+      <h1>Who’s watching?<span class="accent-dot"></span></h1>
+      <div class="profile-gate-sub">Profile · Portfolio · Season 1</div>
+
+      <div class="profile-card" id="profile-card">
+        <div class="avatar-box">
+          <img src="https://drive.google.com/thumbnail?id=1S1ZDIqee9ZRqztHM-vPZwLxQ7sRVJwNO&sz=w600" />
+        </div>
+        <div class="profile-name-pill">
+          <span class="dot"></span>
+          <span>Yash Srivastava</span>
+        </div>
+      </div>
+
+      <div class="profile-hint">Tap to enter the universe</div>
+    </div>
+  </section>
+
+  <!-- HOME -->
+  <section id="home-screen" class="screen">
+    <!-- floating orbs (background) -->
+    <div class="home-orb orb-1"></div>
+    <div class="home-orb orb-2"></div>
+    <div class="home-orb orb-3"></div>
+
+    <nav class="navbar" id="navbar">
+      <div class="nav-logo">NETFLIX</div>
+      <div class="nav-links">
+        <span>Home</span>
+        <span onclick="openCatalog('view-series')">Series</span>
+        <span onclick="openCatalog('view-movies')">Movies</span>
+      </div>
+    </nav>
+
+    <div class="billboard">
+      <div class="billboard-noise"></div>
+      <h1>
+        YASH
+        <span class="glow-chip">ECE · PROJECT-FIRST</span>
+      </h1>
+      <p>
+        Calm, consistent B.Tech ECE student at JIIT Noida. A straightforward catalogue of labs, projects, and self-learning—less about highlights and more about steady growth.
+      </p>
+      <div class="billboard-meta">
+        ECE • Labs • C • DSA • APIs • Music • Inner Work
+      </div>
+      <div class="billboard-tags">
+        <span>Pre-final year</span>
+        <span>Digital · Signals · Communications</span>
+        <span>Project-first learning</span>
+      </div>
+      <div class="billboard-buttons">
+        <button class="btn-play" onclick="openDetail('sub-about', 'home')">
+          ▶ Play Profile
+        </button>
+        <button class="btn-more" onclick="openDetail('sub-know-more', 'home')">
+          ⓘ Know More
+        </button>
+      </div>
+    </div>
+
+    <div class="main-view">
+      <!-- Core ECE -->
+      <div class="row">
+        <h3 class="row-header">Core ECE Foundations</h3>
+        <p class="row-sub">
+          Digital Electronics, Signals and Systems, and Communication Systems—built through labs, debugging, and implementation rather than only exams.
+        </p>
+        <div class="rail">
+          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600');" onclick="openDetail('sub-core-ece', 'home')">
+            <div class="card-meta">Digital, Signals & Comms</div>
+          </div>
+          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1600');" onclick="openDetail('sub-labs', 'home')">
+            <div class="card-meta">Labs & Debugging</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="row">
+        <h3 class="row-header">Projects – Ongoing Season</h3>
+        <p class="row-sub">
+          Fire detection in fields, algorithms shown in motion, structured reservation flows, and APIs designed to respond predictably.
+        </p>
+        <div class="rail">
+          <div class="card" onclick="openDetail('sub-fire', 'home')" style="background-image:url('https://images.unsplash.com/photo-1520113232658-f913d8a8c425?w=1600');">
+            <div class="card-meta">IoT Fire Detection System</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-algo', 'home')" style="background-image:url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1600');">
+            <div class="card-meta">Algorithm Visualizer</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-trs', 'home')" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600');">
+            <div class="card-meta">Tourist Reservation System</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-api', 'home')" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600');">
+            <div class="card-meta">Postman Library API v2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="row">
+        <h3 class="row-header">Technical Skillset</h3>
+        <p class="row-sub">
+          C, DSA, OOP, REST APIs, Raylib, and frontend basics—used in real projects instead of staying only in slides.
+        </p>
+        <div class="rail">
+          <div class="card" onclick="openDetail('sub-skill-tech', 'home')" style="background-image:url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1600');">
+            <div class="card-meta">C, DSA & OOP</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-skill-web', 'home')" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600');">
+            <div class="card-meta">HTML, CSS, JS</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-skill-ai', 'home')" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&sat=-100');">
+            <div class="card-meta">AI Tools & Prompts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="row">
+        <h3 class="row-header">Certification Library</h3>
+        <p class="row-sub">
+          Over 20 certificates across programming, data, systems, communication, and creative work.
+        </p>
+        <div class="rail">
+          <div class="card" onclick="openDetail('sub-cert-tech', 'home')" style="background-image:url('https://images.unsplash.com/photo-1515879212627-45ba89ee28c4?w=1600');">
+            <div class="card-meta">Programming & Systems</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-cert-data', 'home')" style="background-image:url('https://images.unsplash.com/photo-1551288049-bbbda536339a?w=1600');">
+            <div class="card-meta">Data Analytics</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-cert-mgmt', 'home')" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600');">
+            <div class="card-meta">Management & Communication</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-cert-creative', 'home')" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd543c0?w=1600');">
+            <div class="card-meta">Creative & Digital</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Curricular / Inner -->
+      <div class="row">
+        <h3 class="row-header">Beyond Academics</h3>
+        <p class="row-sub">
+          PR at Parola, singer at Crescendo, late-night recordings, and a personal journey built on showing up consistently even when no one is watching.
+        </p>
+        <div class="rail">
+          <div class="card" onclick="openDetail('sub-volunteer', 'home')" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd9d7a11abe8?w=1600');">
+            <div class="card-meta">Parola & Crescendo</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-inner', 'home')" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd543c0?w=1600&sat=-100');">
+            <div class="card-meta">Inner Journey</div>
+          </div>
+          <div class="card" onclick="openDetail('sub-career', 'home')" style="background-image:url('https://images.unsplash.com/photo-1515165562835-c4c9e0737eaa?w=1600');">
+            <div class="card-meta">Career Intent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES CATALOG -->
+  <section class="catalog-screen" id="view-series">
+    <nav class="navbar" style="background:#141414;">
+      <div class="nav-logo">NETFLIX</div>
+      <div class="nav-links">
+        <span>Home</span>
+        <span style="color:#fff;font-weight:bold;">Series</span>
+        <span onclick="openCatalog('view-movies')">Movies</span>
+      </div>
+    </nav>
+    <div class="catalog-content">
+      <h1 class="section-h">Engineering Series</h1>
+      <div class="gateway-container">
+        <div class="card" onclick="openDetail('sub-projects-list', 'series')" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600');">
+          <div class="card-meta">Innovative Projects</div>
+        </div>
+        <div class="card" onclick="openDetail('sub-series-skill', 'series')" style="background-image:url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1600');">
+          <div class="card-meta">Skill Mastery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIES CATALOG -->
+  <section class="catalog-screen" id="view-movies">
+    <nav class="navbar" style="background:#141414;">
+      <div class="nav-logo">NETFLIX</div>
+      <div class="nav-links">
+        <span>Home</span>
+        <span onclick="openCatalog('view-series')">Series</span>
+        <span style="color:#fff;font-weight:bold;">Movies</span>
+      </div>
+    </nav>
+    <div class="catalog-content">
+      <h1 class="section-h">Global Credential Movies</h1>
+      <div class="gateway-container">
+        <div class="card" onclick="openDetail('sub-certs-list', 'movies')" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600');">
+          <div class="card-meta">Certifications</div>
+        </div>
+        <div class="card" onclick="openDetail('sub-volunteer', 'movies')" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd9d7a11abe8?w=1600');">
+          <div class="card-meta">Volunteering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS LIST -->
+  <section class="sub-screen" id="sub-projects-list">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">The Master Project Library</h1>
+    <div class="content-list">
+      <div class="item-card" onclick="openDetail('sub-fire', 'series')">
+        <b>IoT Fire Detection System</b>
+        AQI, smoke, and temperature sensors tuned for real agricultural fields with minimal false alarms.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-algo', 'series')">
+        <b>Algorithm Visualizer</b>
+        C + Raylib engine for visualizing sorting, pathfinding, and backtracking.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-trs', 'series')">
+        <b>Tourist Reservation System</b>
+        C++ OOP-based console app handling bookings, search, and cancellations.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-api', 'series')">
+        <b>Postman Library API v2</b>
+        RESTful CRUD and Postman-based testing.
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES SKILL CATEGORY -->
+  <section class="sub-screen" id="sub-series-skill">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Skill Mastery Series</h1>
+    <div class="content-list">
+      <div class="item-card" onclick="openDetail('sub-skill-core', 'series-skill')">
+        <b>Core Engineering Skills</b>
+        Foundation layer under core ECE subjects and lab discipline.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-skill-programming', 'series-skill')">
+        <b>Programming Systems Skills</b>
+        C, problem solving, OOP, APIs, and a disciplined debugging mindset.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-skill-web-series', 'series-skill')">
+        <b>Web Frontend Skills</b>
+        HTML, CSS, JS, layouts, and interactive UIs like this portfolio.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-skill-soft', 'series-skill')">
+        <b>Soft & Creative Skills</b>
+        Communication, performance, and creative expression through music.
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL DETAIL SCREENS -->
+  <section class="sub-screen" id="sub-skill-core">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Skill Track: Core Engineering</h1>
+    <p class="detail-p"><b>Scope:</b> Core ECE Foundations</p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Digital Electronics</b>
+        Logic design and combinational/sequential circuits learned through lab work and assignments.
+      </div>
+      <div class="item-card">
+        <b>Signals and Systems</b>
+        Continuous and discrete signals, system behaviour, and intuition for filters and responses.
+      </div>
+      <div class="item-card">
+        <b>Communication Systems</b>
+        Modulation, noise, and channels with attention to how real links behave.
+      </div>
+      <div class="item-card">
+        <b>Lab Discipline</b>
+        Careful measurements, debugging setups, and honest documentation of observations.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-skill-programming">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Skill Track: Programming Systems</h1>
+    <p class="detail-p"><b>Scope:</b> Programming fundamentals and systems thinking</p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>C</b>
+        Primary language for DSA, the TRS project, and low-level system-style logic.
+      </div>
+      <div class="item-card">
+        <b>Data Structures & Algorithms</b>
+        Applied in the Algorithm Visualizer, linking code with visual behaviour and time.
+      </div>
+      <div class="item-card">
+        <b>Object-Oriented Programming</b>
+        Used in TRS and API design to enforce structure, reuse, and clarity.
+      </div>
+      <div class="item-card">
+        <b>REST APIs</b>
+        Understanding request/response cycles, endpoints, and debugging with Postman.
+      </div>
+      <div class="item-card">
+        <b>File Handling</b>
+        Used to persist data reliably in C/C++ console projects like TRS.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-skill-web-series">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Skill Track: Web Frontend</h1>
+    <p class="detail-p"><b>Scope:</b> Web frontend foundations</p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>HTML5</b>
+        Semantic structure and clean layout for portfolio and project pages.
+      </div>
+      <div class="item-card">
+        <b>CSS3 (Flexbox/Grid)</b>
+        Netflix-style rows, cards, and responsive layouts like this page.
+      </div>
+      <div class="item-card">
+        <b>Vanilla JavaScript</b>
+        SPA-style navigation stack, back logic, and interactivity without frameworks.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-skill-soft">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Skill Track: Soft & Creative</h1>
+    <p class="detail-p"><b>Scope:</b> Communication and creative identity</p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Public Relations (Parola)</b>
+        Clear communication, coordination, and calm execution during college events.
+      </div>
+      <div class="item-card">
+        <b>Stage Performance (Crescendo)</b>
+        Singing live, handling nerves, and connecting with audiences.
+      </div>
+      <div class="item-card">
+        <b>Content Creation</b>
+        Recording, editing, and publishing song covers and short-form content.
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT CATEGORY -->
+  <section class="sub-screen" id="sub-certs-list">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certification Library Categories</h1>
+    <div class="content-list">
+      <div class="item-card" onclick="openDetail('sub-cert-tech', 'movies')">
+        <b>Programming Systems</b>
+        C, JavaScript, APIs, prompt engineering, and security basics.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-cert-data', 'movies')">
+        <b>Data Analytics</b>
+        Analytics foundations, GenAI analytics, probability, and market awareness.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-cert-mgmt', 'movies')">
+        <b>Management & Communication</b>
+        Communication, operations, talent, aptitude, and personality-focused courses.
+      </div>
+      <div class="item-card" onclick="openDetail('sub-cert-creative', 'movies')">
+        <b>Creative Digital</b>
+        Digital marketing and video-editing exploration.
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAIL – UPDATED TEXTS -->
+  <section class="sub-screen" id="sub-fire">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">IoT Fire Detection System</h1>
+
+    <p class="detail-p">
+      <b>Problem & Context:</b>
+      Detecting early-stage fire in agricultural fields is challenging because small smoke bursts and environmental noise must be ignored while real risk is captured. The goal of the system was to combine raw sensor data with tuned thresholds to generate meaningful alerts only when needed.
+    </p>
+    <p class="detail-p">
+      <b>Architecture & Stack:</b>
+      AQI, smoke, and temperature sensors were interfaced with a microcontroller, and multi-sensor fusion logic was implemented where each reading was mapped to calibrated ranges. Processing was done with C-style logic: per-sensor weighting, a combined risk score, and tiered alert levels (safe, caution, critical) that could trigger hardware outputs or notifications.
+    </p>
+    <p class="detail-p">
+      <b>Key Learnings:</b>
+      The project showed that production-like systems depend not only on a single threshold but on noise filtering, debounce logic, and environment-specific tuning. This experience forms a base for future IoT or embedded work where reliability and control over false positives directly influence user trust.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-algo">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Algorithm Visualizer</h1>
+
+    <p class="detail-p">
+      <b>Objective:</b>
+      Move DSA concepts beyond notebook pseudocode by turning C implementations into real-time visuals, so comparisons, swaps, path choices, and backtracking steps are clearly visible on screen.
+    </p>
+    <p class="detail-p">
+      <b>Implementation:</b>
+      Using C with Raylib, a modular engine was built that maps sorting algorithms (Bubble, Selection, Insertion, Merge, Quick, Radix, Bucket, Cocktail), Dijkstra’s shortest path, and N-Queens backtracking into visual states. Each algorithm has its own update–render loop, making time complexity visible through bar heights, colors, and animation speed.
+    </p>
+    <p class="detail-p">
+      <b>Impact & Learning:</b>
+      The visualizer changed the debugging style: instead of only catching segmentation faults or wrong outputs, it became possible to catch wrong frame transitions, stuck states, and unnatural animations. This improved both reasoning and code quality and serves as a strong portfolio piece that demonstrates DSA understanding at an execution level, not just theoretical.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-trs">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Tourist Reservation System (C++)</h1>
+
+    <p class="detail-p">
+      <b>System Design:</b>
+      A console-based C++ application with clearly separated admin and user flows, implemented using OOP pillars (abstraction, inheritance, polymorphism, encapsulation). Core entities such as User, Booking, and Package were modeled as classes with well-defined responsibilities.
+    </p>
+    <p class="detail-p">
+      <b>Features & Flow:</b>
+      The system supports booking creation, search, cancellation, and simple payment simulations, with all operations persisted via file-based storage. Input validation, duplicate booking checks, and edge-case handling keep user journeys predictable and stable, even without a graphical interface.
+    </p>
+    <p class="detail-p">
+      <b>Outcome:</b>
+      This project introduced production-style thinking: dealing with logs, error messages, and data consistency while breaking logic into reusable functions and classes. It acts as a strong starting point for backend or systems-oriented roles.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-api">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Postman Library API v2</h1>
+
+    <p class="detail-p">
+      <b>API Scope:</b>
+      A library-style REST API where CRUD operations for books and users were designed with clear endpoints, request bodies, and status codes. The focus was on predictable contracts and clean responses, not just basic connectivity.
+    </p>
+    <p class="detail-p">
+      <b>Testing & Workflow:</b>
+      Postman collections, environments, and test scripts were used to cover both happy-path and negative scenarios, such as invalid payloads, missing fields, or unauthorized requests. After each change, the collection was re-run to catch regressions early.
+    </p>
+    <p class="detail-p">
+      <b>Professional Learning:</b>
+      The project helped develop an “API-first” mindset—prioritising documentation, consistent naming, and disciplined status-code usage. These habits transfer directly to real-world backend or API testing work, where reliability and clarity shape team collaboration.
+    </p>
+  </section>
+
+  <!-- SKILLS HIGH-LEVEL -->
+  <section class="sub-screen" id="sub-skill-tech">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Technical Mastery</h1>
+    <div class="content-list">
+      <div class="item-card">
+        <b>C Programming</b>
+        Primary language for problem solving, lab work, and system-style thinking.
+      </div>
+      <div class="item-card">
+        <b>Data Structures & Algorithms</b>
+        Applied in the visualizer and projects as tools for clarity, not just contests.
+      </div>
+      <div class="item-card">
+        <b>Object-Oriented Programming</b>
+        Used in TRS and API design to enforce structure, reuse, and clear boundaries.
+      </div>
+      <div class="item-card">
+        <b>REST APIs & Postman</b>
+        Understanding endpoints, payloads, status codes, and full-cycle debugging.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-skill-web">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Web Frontend Foundations</h1>
+    <div class="content-list">
+      <div class="item-card">
+        <b>HTML & CSS</b>
+        Used to build structured layouts like this Netflix-style portfolio.
+      </div>
+      <div class="item-card">
+        <b>JavaScript (Vanilla)</b>
+        Single-page navigation, simple state handling, and interactivity without frameworks.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-skill-ai">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">AI Tools & Prompting</h1>
+    <p class="detail-p">
+      Exploring AI as a collaborator—for brainstorming, debugging, and extending ideas—while staying honest about current depth instead of overstating expertise.
+    </p>
+  </section>
+
+  <!-- CERT DETAIL -->
+  <section class="sub-screen" id="sub-cert-tech">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Programming Systems Certificates</h1>
+    <div class="content-list">
+      <div class="item-card"><b>C Programming</b> – LetsUpgrade</div>
+      <div class="item-card"><b>JavaScript</b> – LetsUpgrade</div>
+      <div class="item-card"><b>Postman API Fundamentals</b> – Postman</div>
+      <div class="item-card"><b>Develop Your Own Google Assistant with AI</b></div>
+      <div class="item-card"><b>Prompt Engineering</b> – LetsUpgrade</div>
+      <div class="item-card"><b>Introduction to Ethical Hacking</b> – Great Learning</div>
+      <div class="item-card"><b>Cybersecurity Basics</b> – Great Learning</div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-data">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Data Analytics Certificates</h1>
+    <div class="content-list">
+      <div class="item-card"><b>Data Science Foundations</b> – Great Learning</div>
+      <div class="item-card"><b>Tata GenAI Powered Data Analytics</b> – Forage</div>
+      <div class="item-card"><b>Probability</b> – Great Learning</div>
+      <div class="item-card"><b>Data Analysis (Conceptual)</b> – Great Learning</div>
+      <div class="item-card"><b>Stock Market Basics</b></div>
+      <div class="item-card"><b>Business Analysis</b> – LinkedIn Learning</div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-mgmt">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Management & Communication Certificates</h1>
+    <div class="content-list">
+      <div class="item-card"><b>Effective Communication</b> – Great Learning</div>
+      <div class="item-card"><b>Smart English Basics for Professionals</b></div>
+      <div class="item-card"><b>Communication Management</b></div>
+      <div class="item-card"><b>Talent Management</b></div>
+      <div class="item-card"><b>Operational Excellence & Critical Thinking</b></div>
+      <div class="item-card"><b>Quantitative Aptitude Basics</b></div>
+      <div class="item-card"><b>Personality Development</b></div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-creative">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Creative & Digital Certificates</h1>
+    <div class="content-list">
+      <div class="item-card"><b>Introduction to Digital Marketing</b></div>
+      <div class="item-card"><b>Learn Video Editing for Content Creators</b></div>
+    </div>
+  </section>
+
+  <!-- CORE / JOURNEY -->
+  <section class="sub-screen" id="sub-core-ece">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Core ECE Foundation</h1>
+    <p class="detail-p">
+      Digital Electronics, Signals and Systems, and Communication Systems learned through labs, experiments, and errors—with more focus on understanding than rote formulas.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-labs">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Labs & Debugging</h1>
+    <p class="detail-p">
+      Lab time meant wiring, debugging, and watching circuits and code misbehave until patterns became clear and intuition formed.
+    </p>
+  </section>
+
+  <!-- VOLUNTEERING / INNER -->
+  <section class="sub-screen" id="sub-volunteer">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Extra-Curricular Impact</h1>
+    <div class="content-list">
+      <div class="item-card">
+        <b>PR Member at Parola – The Literary Hub</b>
+        Handling communication, coordination, and on-ground execution of college events.
+      </div>
+      <div class="item-card">
+        <b>Singer at Crescendo (Music Society)</b>
+        Performing song covers live on stage and learning to handle performance pressure.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-inner">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Inner Journey</h1>
+    <p class="detail-p">
+      Learning alone, attending workshops alone, choosing focused study over distractions, and continuing even when there was no external validation.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-career">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Career Intent</h1>
+    <p class="detail-p">
+      Looking for roles where fundamentals, clear thinking, and calm communication are valued, and where growth is measured over years rather than quick metrics.
+    </p>
+  </section>
+
+  <!-- ABOUT (Play Profile) – 1 professional para -->
+  <section class="sub-screen" id="sub-about">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Professional Snapshot</h1>
+    <p class="detail-p">
+      Pre-final year B.Tech ECE student at JIIT Noida, focused on building reliable systems through C/C++, DSA, and core ECE labs, with hands-on projects in IoT, algorithm visualization, and API development aimed at entry-level software or embedded engineering roles.
+    </p>
+  </section>
+
+  <!-- KNOW MORE – 3 paragraphs -->
+  <section class="sub-screen" id="sub-know-more">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Know More About Yash</h1>
+
+    <p class="detail-p">
+      Professionally, the B.Tech ECE program built a foundation in digital electronics, signals, and communication systems, which is combined with C/C++ programming, DSA, and problem solving to build practical projects. The approach is structured: first understand the concept, then translate it into code, circuits, or APIs, and finally test and refine until it reaches a reliable state.
+    </p>
+    <p class="detail-p">
+      Academically, labs and assignments are treated as opportunities to understand behaviour rather than just earn marks—such as how sensors respond in real environments or how DSA code feels in runtime when it is visualized. Certifications in programming, data analytics, cybersecurity, and communication improve overall ecosystem awareness, so the profile does not depend on a single narrow skill.
+    </p>
+    <p class="detail-p">
+      From a career perspective, the focus is on early-stage roles where clean code, debugging discipline, and calm communication create real value. The ideal environment is a team that respects fundamentals, documentation, and long-term growth, with work around IoT-style systems, backend services, or performance-focused tools that allow skills to deepen over time.
+    </p>
+  </section>
+
+  <script>
+    // SOUND + INTRO
+    const tudum = document.getElementById("tudum");
+    const muteBtn = document.getElementById("mute-btn");
+    const profileCard = document.getElementById("profile-card");
+    let soundOn = false;
+
+    muteBtn.onclick = () => {
+      soundOn = !soundOn;
+      muteBtn.innerText = soundOn ? "🔊" : "🔇";
+    };
+
+    window.onload = () => {
+      setTimeout(() => {
+        muteBtn.classList.add("visible");
+        if (soundOn) {
+          tudum.currentTime = 0;
+          tudum.play().catch(() => {});
+        }
+        setTimeout(() => {
+          document.getElementById("intro-stage").style.display = "none";
+          document.getElementById("profile-screen").classList.add("active");
+        }, 3800);
+      }, 500);
+    };
+
+    // Profile click = sound + go home
+    profileCard.addEventListener("click", () => {
+      if (soundOn) {
+        tudum.currentTime = 0;
+        tudum.play().catch(() => {});
+      }
+      openHomeHard();
+    });
+
+    // NAVIGATION STACK
+    let navStack = [];
+
+    function resetScreens() {
+      document
+        .querySelectorAll(".screen, .sub-screen, .catalog-screen")
+        .forEach((s) => {
+          s.classList.remove("active");
+          s.style.display = "none";
+        });
+    }
+
+    function showScreen(el, displayType) {
+      if (!el) return;
+      el.classList.add("active");
+      el.style.display = displayType;
+    }
+
+    function openHomeHard() {
+      navStack = [];
+      resetScreens();
+      const homeEl = document.getElementById("home-screen");
+      showScreen(homeEl, "block");
+      homeEl.scrollTop = 0;
+    }
+
+    function openCatalog(id) {
+      navStack.push({ type: "catalog", id: id });
+      resetScreens();
+      showScreen(document.getElementById(id), "flex");
+    }
+
+    function openDetail(id, from) {
+      navStack.push({ type: "detail", id: id, from: from });
+      resetScreens();
+      showScreen(document.getElementById(id), "block");
+      attachBackHandler(id);
+    }
+
+    function attachBackHandler(detailId) {
+      const screen = document.getElementById(detailId);
+      const backBtn = screen ? screen.querySelector(".back-logic") : null;
+      if (!backBtn) return;
+
+      backBtn.onclick = () => {
+        navStack.pop();
+        const last = navStack[navStack.length - 1];
+
+        resetScreens();
+
+        if (!last) {
+          openHomeHard();
+          return;
+        }
+
+        if (last.type === "catalog") {
+          showScreen(document.getElementById(last.id), "flex");
+        } else if (last.type === "detail") {
+          showScreen(document.getElementById(last.id), "block");
+          attachBackHandler(last.id);
+        }
+      };
+    }
+
+    const home = document.getElementById("home-screen");
+    home.onscroll = () => {
+      const nav = document.getElementById("navbar");
+      if (home.scrollTop > 50) nav.classList.add("scrolled-nav");
+      else nav.classList.remove("scrolled-nav");
+    };
+
+    document.querySelectorAll(".nav-links span").forEach((sp) => {
+      if (sp.textContent.trim() === "Home") {
+        sp.onclick = () => openHomeHard();
+      }
+    });
+    document.querySelectorAll(".nav-logo").forEach((lg) => {
+      lg.onclick = () => openHomeHard();
+    });
+  </script>
+</body>
+</html>
