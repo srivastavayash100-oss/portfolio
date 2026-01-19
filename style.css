@@ -1,0 +1,135 @@
+/* --- YASH'S MASTERPIECE CSS: STABILITY & OVERLAP FIX --- */
+
+/* 1. Global & Scroll Fix */
+body {
+    background: radial-gradient(circle at top, #181818 0, #000000 55%);
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    cursor: default;  
+}
+
+#home-screen {
+    display: none;
+    min-height: 100vh; 
+    width: 100%;
+    position: relative;
+    background: radial-gradient(circle at 0% 0%, #1f1015 0, #050307 45%),
+                radial-gradient(circle at 100% 100%, #060813 0, #000 55%);
+}
+
+/* 2. Smart Cursor Logic */
+.profile-card, .nav-links span, .nav-logo, .billboard-buttons button, 
+.back-btn, .has-more-info, .gateway-card {
+    cursor: pointer !important;
+}
+
+/* 3. Sexy N Logo Styles */
+.sexy-n {
+  width: 100%;
+  filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.6));
+  animation: logoBreath 2.5s ease-in-out infinite alternate;
+}
+
+.intro-logo-wrap {
+  padding: 30px !important;
+  background: radial-gradient(circle, rgba(229,9,20,0.2) 0%, rgba(0,0,0,0.9) 80%) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  box-shadow: 0 0 80px rgba(0,0,0,1), 0 0 40px rgba(229,9,20,0.3) !important;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes logoBreath {
+  0% { transform: scale(1) translateZ(0); filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.4)); }
+  100% { transform: scale(1.1) translateZ(50px); filter: drop-shadow(0 0 45px rgba(229, 9, 20, 1)); }
+}
+
+/* 4. OVERLAP & STABILITY FIX */
+.billboard {
+    min-height: 85vh; /* Height ensure karta hai ki text ke liye jagah rahe */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.main-view {
+    /* Minimize karne par overlap rokne ke liye margin zero kiya */
+    margin-top: 0 !important; 
+    padding-top: 60px; /* Billboard se safe distance */
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(to bottom, transparent, #141414 15%);
+}
+
+/* 5. BLOCK SIZE & RAIL FIX */
+.rail {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 2vw 0; 
+    align-items: center;
+}
+.rail::-webkit-scrollbar { display: none; }
+
+.card {
+    /* Shape Stability: Pixel based min-width overlap aur pichakne se rokta hai */
+    min-width: 220px !important; 
+    height: 125px !important;    
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0; 
+    transition: 0.4s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+/* 6. FINAL FULL TILE BLUR & OVERLAY */
+.has-more-info {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.has-more-info:hover > *:not(.info-overlay) {
+    filter: blur(10px) grayscale(0.5);
+    opacity: 0.15;
+    transform: scale(0.96); 
+}
+
+.info-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.3s var(--ease-netflix);
+    z-index: 10;
+    pointer-events: none; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.has-more-info:hover .info-overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.has-more-info:hover {
+    background: #111;
+    border: 2px solid var(--nf-red) !important;
+    box-shadow: 0 0 40px rgba(229, 9, 20, 0.6) !important;
+    transform: scale(1.3) translateY(-5%); /* Overlap rokne ke liye scale thoda kam kiya */
+    z-index: 500 !important; /* Hover card hamesha sabse upar rahega */
+}
