@@ -14,7 +14,6 @@
       --nf-black: #141414;
       --nf-gray: #181818;
       --ease-netflix: cubic-bezier(0.5, 0, 0.1, 1);
-      /* NEW accent colors for extra styling */
       --nf-neon: #ff3b6a;
       --nf-cyan: #3ad9ff;
       --nf-gold: #f5b300;
@@ -39,7 +38,7 @@
       overflow: hidden;
     }
 
-    /* INTRO – more stylish */
+    /* INTRO */
     #intro-stage {
       position: fixed;
       inset: 0;
@@ -52,7 +51,6 @@
       z-index: 9999;
       overflow: hidden;
     }
-
     #intro-stage::before {
       content: "";
       position: absolute;
@@ -65,7 +63,6 @@
       mix-blend-mode: screen;
       animation: introGlow 4s ease-out forwards;
     }
-
     #intro-stage::after {
       content: "";
       position: absolute;
@@ -81,7 +78,6 @@
       animation: dustDrift 4.5s ease-out forwards;
       pointer-events: none;
     }
-
     .intro-container {
       width: 360px;
       animation: netflixZoom 4.5s var(--ease-netflix) forwards;
@@ -89,7 +85,6 @@
       text-align: center;
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
     .intro-container::after {
       content: "";
       position: absolute;
@@ -102,7 +97,6 @@
       opacity: 0;
       animation: baseGlow 3s ease-out 0.6s forwards;
     }
-
     .intro-logo-wrap {
       padding: 16px 18px 10px 18px;
       border-radius: 18px;
@@ -113,12 +107,10 @@
       border: 1px solid rgba(255,255,255,0.12);
       backdrop-filter: blur(22px);
     }
-
     .intro-container svg {
       width: 100%;
       filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.6));
     }
-
     .intro-title {
       margin-top: 18px;
       font-size: 1.8rem;
@@ -126,7 +118,6 @@
       text-transform: uppercase;
       font-weight: 800;
     }
-
     .intro-subtitle {
       margin-top: 6px;
       font-size: 0.8rem;
@@ -134,7 +125,6 @@
       text-transform: uppercase;
       color: #c5c5d8;
     }
-
     .intro-tagline {
       margin-top: 12px;
       font-size: 0.8rem;
@@ -143,7 +133,6 @@
       transform: translateY(8px);
       animation: taglineIn 1.2s ease-out 1.4s forwards;
     }
-
     .intro-timestamp {
       margin-top: 4px;
       font-size: 0.7rem;
@@ -192,7 +181,7 @@
       flex-direction: column;
     }
 
-    /* EXTRA STYLING: WHO’S WATCHING */
+    /* PROFILE */
     .profile-gate {
       position: relative;
       display: inline-block;
@@ -209,7 +198,6 @@
       overflow: hidden;
       backdrop-filter: blur(26px);
     }
-
     .profile-gate::before,
     .profile-gate::after {
       content: "";
@@ -222,7 +210,6 @@
       opacity: 0.5;
       pointer-events: none;
     }
-
     .profile-gate::before {
       top: -180px;
       left: -150px;
@@ -232,7 +219,6 @@
       right: -180px;
       background: radial-gradient(circle, rgba(58,217,255,0.18) 0, transparent 60%);
     }
-
     .profile-gate h1 {
       font-size: 3.5vw;
       font-weight: 400;
@@ -242,7 +228,6 @@
       position: relative;
       z-index: 2;
     }
-
     .profile-gate h1 span.accent-dot {
       display: inline-block;
       width: 8px;
@@ -252,7 +237,6 @@
       background: radial-gradient(circle, var(--nf-neon), transparent 70%);
       box-shadow: 0 0 16px rgba(255,59,106,0.9);
     }
-
     .profile-gate-sub {
       font-size: 0.9rem;
       color: #b5b5c7;
@@ -263,7 +247,6 @@
       position: relative;
       z-index: 2;
     }
-
     .profile-orbit {
       position: absolute;
       inset: -18%;
@@ -283,13 +266,11 @@
       top: 10%;
       right: 16%;
     }
-
     @keyframes profileOrbit {
       0% { transform: rotate(0deg); opacity: 0.7; }
       50% { opacity: 0.2; }
       100% { transform: rotate(360deg); opacity: 0.7; }
     }
-
     .profile-card {
       width: 12vw;
       min-width: 160px;
@@ -299,7 +280,6 @@
       position: relative;
       z-index: 2;
     }
-
     .avatar-box {
       width: 100%;
       aspect-ratio: 1;
@@ -316,7 +296,6 @@
       box-shadow:
         0 20px 50px rgba(0,0,0,0.95);
     }
-
     .avatar-box::after {
       content: "";
       position: absolute;
@@ -325,7 +304,6 @@
       opacity: 0;
       transition: 0.3s;
     }
-
     .avatar-box img {
       width: 100%;
       height: 100%;
@@ -333,7 +311,6 @@
       transform: scale(1.02);
       transition: 0.35s var(--ease-netflix);
     }
-
     .profile-card:hover .avatar-box {
       border-color: rgba(255,255,255,0.75);
       transform: translateY(-10px) scale(1.03);
@@ -341,16 +318,13 @@
         0 28px 80px rgba(0,0,0,0.98),
         0 0 40px rgba(255,59,106,0.7);
     }
-
     .profile-card:hover .avatar-box img {
       transform: scale(1.08);
       filter: saturate(1.2);
     }
-
     .profile-card:hover .avatar-box::after {
       opacity: 1;
     }
-
     .profile-name-pill {
       display: inline-flex;
       align-items: center;
@@ -363,7 +337,6 @@
       color: #d0d0e0;
       backdrop-filter: blur(14px);
     }
-
     .profile-name-pill span.dot {
       width: 7px;
       height: 7px;
@@ -371,7 +344,6 @@
       background: radial-gradient(circle, #00ff95, transparent 75%);
       box-shadow: 0 0 12px rgba(0,255,149,0.9);
     }
-
     .profile-hint {
       margin-top: 18px;
       font-size: 0.8rem;
@@ -379,7 +351,6 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes scaleIn { from {transform:scale(0.8);opacity:0;} to {transform:scale(1);opacity:1;} }
 
@@ -397,7 +368,6 @@
     }
     #home-screen::-webkit-scrollbar { display: none; }
 
-    /* HOME: floating gradient orbs */
     .home-orb {
       position: fixed;
       border-radius: 50%;
@@ -431,7 +401,6 @@
       left: 18%;
       animation: floatOrb3 28s ease-in-out infinite alternate;
     }
-
     @keyframes floatOrb1 {
       0% { transform: translate3d(0,0,0); }
       100% { transform: translate3d(40px,50px,0); }
@@ -482,6 +451,8 @@
       cursor: pointer;
       transition: 0.3s;
       position: relative;
+      opacity: 0.6;
+      padding-bottom: 5px;
     }
     .nav-links span::after {
       content: "";
@@ -499,6 +470,12 @@
     .nav-links span:hover::after {
       width: 100%;
     }
+    .nav-links span.active-nav {
+      opacity: 1;
+      color: #fff;
+      font-weight: 800;
+      border-bottom: 3px solid #E50914;
+    }
 
     .billboard {
       height: 90vh;
@@ -513,8 +490,6 @@
       padding-left: 4%;
       overflow: hidden;
     }
-
-    /* extra overlay layers on billboard */
     .billboard::before {
       content: "";
       position: absolute;
@@ -534,7 +509,6 @@
       background-image: url("https://grainy-gradients.vercel.app/noise.svg");
       pointer-events: none;
     }
-
     .billboard h1 {
       font-family: "Plus Jakarta Sans";
       font-size: 6vw;
@@ -556,7 +530,6 @@
       letter-spacing: 0.16em;
       font-weight: 600;
     }
-
     .billboard p {
       max-width: 520px;
       font-size: 1.2vw;
@@ -585,7 +558,6 @@
       background: rgba(0,0,0,0.6);
       backdrop-filter: blur(16px);
     }
-
     .billboard-buttons {
       display: flex;
       gap: 15px;
@@ -844,7 +816,7 @@
       box-shadow: 0 16px 40px rgba(0,0,0,0.85);
       backdrop-filter: blur(14px);
     }
-    #mute-btn.visible {
+    #mute-btn.invisible {
       opacity: 1;
       pointer-events: auto;
     }
@@ -899,25 +871,23 @@
     }
   </style>
 </head>
-<body>
+
+<body onclick="unlockAudio()">
   <!-- SOUND -->
   <button id="mute-btn">🔇</button>
-  <audio id="tudum" src="https://assets.mixkit.co/sfx/preview/mixkit-cinematic-impact-hit-1445.mp3"></audio>
+  <audio id="tudum" src="https://assets.mixkit.co/sfx/preview/mixkit-cinematic-impact-hit-1445.mp3" preload="auto"></audio>
 
   <!-- INTRO -->
   <section id="intro-stage">
     <div class="intro-container">
       <div class="intro-logo-wrap">
-        <svg viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0H0V100H12V0Z" fill="#E50914" />
-          <path d="M48 0H60V100H48V0Z" fill="#E50914" />
-          <path d="M12 0L48 100V75L22 0H12Z" fill="#B20710" />
-        </svg>
-      </div>
-      <div class="intro-title">YASH SRIVASTAVA</div>
-      <div class="intro-subtitle">ENGINEERING · PROJECT SERIES</div>
-      <div class="intro-tagline">Quiet consistency, clear fundamentals, and hands‑on projects.</div>
-      <div class="intro-timestamp">B.Tech ECE · JIIT Noida</div>
+  <svg viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="sexy-n">
+    <path d="M12 0H0V100H12V0Z" fill="#B20710" />
+    <path d="M48 0H60V100H48V0Z" fill="#B20710" />
+    <path d="M12 0L48 100V75L22 0H12Z" fill="#E50914" />
+  </svg>
+</div>
+        
     </div>
   </section>
 
@@ -926,25 +896,24 @@
     <div class="profile-gate" style="text-align: center;">
       <div class="profile-orbit"></div>
       <h1>Who’s watching?<span class="accent-dot"></span></h1>
-      <div class="profile-gate-sub">Profile · Portfolio · Season 1</div>
+      <div class="profile-gate-sub">Ready to Explore Yash's Saga?</div>
 
       <div class="profile-card" id="profile-card">
         <div class="avatar-box">
           <img src="https://drive.google.com/thumbnail?id=1S1ZDIqee9ZRqztHM-vPZwLxQ7sRVJwNO&sz=w600" />
         </div>
         <div class="profile-name-pill">
-          <span class="dot"></span>
-          <span>Yash Srivastava</span>
-        </div>
+    <span class="dot"></span>
+    <span class="typing-text">Yash Srivastava</span>
+</div> 
       </div>
 
-      <div class="profile-hint">Tap to enter the universe</div>
+      <div class="profile-hint">CHOOSE USER TO STREAM JOURNEY</div>
     </div>
   </section>
 
   <!-- HOME -->
   <section id="home-screen" class="screen">
-    <!-- floating orbs (background) -->
     <div class="home-orb orb-1"></div>
     <div class="home-orb orb-2"></div>
     <div class="home-orb orb-3"></div>
@@ -952,9 +921,9 @@
     <nav class="navbar" id="navbar">
       <div class="nav-logo">NETFLIX</div>
       <div class="nav-links">
-        <span>Home</span>
-        <span onclick="openCatalog('view-series')">Series</span>
-        <span onclick="openCatalog('view-movies')">Movies</span>
+        <span class="active-nav">Home</span>
+        <span onclick="openCatalog('view-series', 'Series')">Series</span>
+        <span onclick="openCatalog('view-movies', 'Movies')">Movies</span>
       </div>
     </nav>
 
@@ -962,18 +931,18 @@
       <div class="billboard-noise"></div>
       <h1>
         YASH
-        <span class="glow-chip">ECE · PROJECT-FIRST</span>
+        <span class="glow-chip">Innovation-Driven Systems Thinker</span>
       </h1>
       <p>
-        Calm, consistent B.Tech ECE student at JIIT Noida. A straightforward catalogue of labs, projects, and self-learning—less about highlights and more about steady growth.
+        Beyond the highlight reel lies a saga of steady progress. Navigating the depths of electronics through persistent lab exploration and academic rigor. A straightforward chronicle of turning technical curiosity into consistent, real-world results
       </p>
       <div class="billboard-meta">
-        ECE • Labs • C • DSA • APIs • Music • Inner Work
+        TRANSFORMING COMPLEXITY INTO SEAMLESS SOLUTIONS
       </div>
       <div class="billboard-tags">
-        <span>Pre-final year</span>
-        <span>Digital · Signals · Communications</span>
-        <span>Project-first learning</span>
+        <span>Signal over Noise</span>
+        <span>Dynamic Bandwidth Adaptation</span>
+        <span>Zero Impedance</span>
       </div>
       <div class="billboard-buttons">
         <button class="btn-play" onclick="openDetail('sub-about', 'home')">
@@ -990,13 +959,13 @@
       <div class="row">
         <h3 class="row-header">Core ECE Foundations</h3>
         <p class="row-sub">
-          Digital Electronics, Signals and Systems, and Communication Systems—built through labs, debugging, and implementation rather than only exams.
+          Digital Electronics, Signals and Systems, and Communication Systems—built through labs, debugging, and implementation rather than only exams
         </p>
         <div class="rail">
-          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1600');" onclick="openDetail('sub-core-ece', 'home')">
+          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800');" onclick="openDetail('sub-core-ece', 'home')">
             <div class="card-meta">Digital, Signals & Comms</div>
           </div>
-          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1600');" onclick="openDetail('sub-labs', 'home')">
+          <div class="card" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800');" onclick="openDetail('sub-labs', 'home')">
             <div class="card-meta">Labs & Debugging</div>
           </div>
         </div>
@@ -1004,15 +973,15 @@
 
       <!-- Projects -->
       <div class="row">
-        <h3 class="row-header">Projects – Ongoing Season</h3>
+        <h3 class="row-header">Projects </h3>
         <p class="row-sub">
-          Fire detection in fields, algorithms shown in motion, structured reservation flows, and APIs designed to respond predictably.
+          Fire detection in fields, algorithms shown in motion, structured reservation flows, and APIs designed to respond predictably
         </p>
         <div class="rail">
-          <div class="card" onclick="openDetail('sub-fire', 'home')" style="background-image:url('https://images.unsplash.com/photo-1520113232658-f913d8a8c425?w=1600');">
+          <div class="card" onclick="openDetail('sub-fire', 'home')" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800');">
             <div class="card-meta">IoT Fire Detection System</div>
           </div>
-          <div class="card" onclick="openDetail('sub-algo', 'home')" style="background-image:url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1600');">
+          <div class="card" onclick="openDetail('sub-algo', 'home')" style="background-image:url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800');">
             <div class="card-meta">Algorithm Visualizer</div>
           </div>
           <div class="card" onclick="openDetail('sub-trs', 'home')" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600');">
@@ -1026,19 +995,19 @@
 
       <!-- Skills -->
       <div class="row">
-        <h3 class="row-header">Technical Skillset</h3>
+        <h3 class="row-header">Skillset</h3>
         <p class="row-sub">
-          C, DSA, OOP, REST APIs, Raylib, and frontend basics—used in real projects instead of staying only in slides.
+          C | C++ | Java | DSA | MATLAB | Postman | Optimization | Disciplined | Adaptable | Analytical
         </p>
         <div class="rail">
-          <div class="card" onclick="openDetail('sub-skill-tech', 'home')" style="background-image:url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1600');">
-            <div class="card-meta">C, DSA & OOP</div>
+          <div class="card" onclick="openDetail('sub-skill-tech', 'home')" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800');">
+            <div class="card-meta">Technical</div>
           </div>
-          <div class="card" onclick="openDetail('sub-skill-web', 'home')" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600');">
-            <div class="card-meta">HTML, CSS, JS</div>
+          <div class="card" onclick="openDetail('sub-skill-web', 'home')" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800');">
+            <div class="card-meta">Web Dev</div>
           </div>
-          <div class="card" onclick="openDetail('sub-skill-ai', 'home')" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&sat=-100');">
-            <div class="card-meta">AI Tools & Prompts</div>
+          <div class="card" onclick="openDetail('sub-skill-ai', 'home')" style="background-image:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800');">
+            <div class="card-meta">AI Engineering</div>
           </div>
         </div>
       </div>
@@ -1047,42 +1016,71 @@
       <div class="row">
         <h3 class="row-header">Certification Library</h3>
         <p class="row-sub">
-          Over 20 certificates across programming, data, systems, communication, and creative work.
+          Awarded 20+ Certifications across programming, data, systems, communication, and creative work
         </p>
         <div class="rail">
-          <div class="card" onclick="openDetail('sub-cert-tech', 'home')" style="background-image:url('https://images.unsplash.com/photo-1515879212627-45ba89ee28c4?w=1600');">
-            <div class="card-meta">Programming & Systems</div>
-          </div>
-          <div class="card" onclick="openDetail('sub-cert-data', 'home')" style="background-image:url('https://images.unsplash.com/photo-1551288049-bbbda536339a?w=1600');">
-            <div class="card-meta">Data Analytics</div>
-          </div>
-          <div class="card" onclick="openDetail('sub-cert-mgmt', 'home')" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600');">
+         <div class="card" 
+     onclick="openDetail('sub-cert-tech', 'home')" 
+     style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center;">
+    
+    <div class="card-meta">Programming & Systems</div>
+</div>
+          <div class="card" 
+     onclick="openDetail('sub-cert-data', 'home')" 
+     style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center;">
+    
+    <div class="card-meta">Data Analytics & Insights</div>
+</div>
+          <div class="card" onclick="openDetail('sub-cert-mgmt', 'home')" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800');">
             <div class="card-meta">Management & Communication</div>
           </div>
-          <div class="card" onclick="openDetail('sub-cert-creative', 'home')" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd543c0?w=1600');">
-            <div class="card-meta">Creative & Digital</div>
-          </div>
+          <div class="card" 
+     onclick="openDetail('sub-cert-creative', 'home')" 
+     style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center;">
+    
+    <div class="card-meta">Creative & Digital Arts</div>
+</div>
         </div>
       </div>
 
-      <!-- Extra Curricular / Inner -->
+      <!-- Beyond Academics -->
       <div class="row">
         <h3 class="row-header">Beyond Academics</h3>
         <p class="row-sub">
-          PR at Parola, singer at Crescendo, late-night recordings, and a personal journey built on showing up consistently even when no one is watching.
-        </p>
+          Not an expert, just a student of the grind. From guitar strings and dance floors to the adrenaline of a live concert—I live for the process, not the applause. Just a guy addicted to showing up, even when the room is empty
+        </p> 
         <div class="rail">
-          <div class="card" onclick="openDetail('sub-volunteer', 'home')" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd9d7a11abe8?w=1600');">
-            <div class="card-meta">Parola & Crescendo</div>
+          <div class="card" onclick="openDetail('sub-volunteer', 'home')" style="background-image:url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800');">
+            <div class="card-meta">Campus Hubs</div>
           </div>
-          <div class="card" onclick="openDetail('sub-inner', 'home')" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd543c0?w=1600&sat=-100');">
+          <div class="card" onclick="openDetail('sub-inner', 'home')" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800');">
             <div class="card-meta">Inner Journey</div>
           </div>
-          <div class="card" onclick="openDetail('sub-career', 'home')" style="background-image:url('https://images.unsplash.com/photo-1515165562835-c4c9e0737eaa?w=1600');">
+          <div class="card" onclick="openDetail('sub-career', 'home')" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800');">
             <div class="card-meta">Career Intent</div>
           </div>
         </div>
       </div>
+      </div> 
+    </div> </div> <footer id="home-footer" style="margin-top: 80px; padding: 60px 0; text-align: center; background: rgba(0,0,0,0.7); border-top: 1px solid #333; width: 100%;">
+      <div style="margin-bottom: 20px; font-size: 14px; color: #888;">
+          Email: <a href="mailto:yashsrivastavaz1021@gmail.com" style="color: #fff; text-decoration: none;">yashsrivastavaz1021@gmail.com</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 30px;">
+          <a href="https://www.linkedin.com/in/yash-srivastava-a550a2285" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0077b5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          <a href="https://github.com/srivastavayash100-oss" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="https://www.instagram.com/yashsrivastavaz/" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      </div>
+  </footer>
+
+  </div> 
+</section>
     </div>
   </section>
 
@@ -1091,9 +1089,9 @@
     <nav class="navbar" style="background:#141414;">
       <div class="nav-logo">NETFLIX</div>
       <div class="nav-links">
-        <span>Home</span>
-        <span style="color:#fff;font-weight:bold;">Series</span>
-        <span onclick="openCatalog('view-movies')">Movies</span>
+        <span onclick="openHomeHard()">Home</span>
+        <span class="active-nav">Series</span>
+        <span onclick="openCatalog('view-movies', 'Movies')">Movies</span>
       </div>
     </nav>
     <div class="catalog-content">
@@ -1114,21 +1112,32 @@
     <nav class="navbar" style="background:#141414;">
       <div class="nav-logo">NETFLIX</div>
       <div class="nav-links">
-        <span>Home</span>
-        <span onclick="openCatalog('view-series')">Series</span>
-        <span style="color:#fff;font-weight:bold;">Movies</span>
+        <span onclick="openHomeHard()">Home</span>
+        <span onclick="openCatalog('view-series', 'Series')">Series</span>
+        <span class="active-nav">Movies</span>
       </div>
     </nav>
     <div class="catalog-content">
-      <h1 class="section-h">Global Credential Movies</h1>
-      <div class="gateway-container">
-        <div class="card" onclick="openDetail('sub-certs-list', 'movies')" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600');">
-          <div class="card-meta">Certifications</div>
-        </div>
-        <div class="card" onclick="openDetail('sub-volunteer', 'movies')" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd9d7a11abe8?w=1600');">
-          <div class="card-meta">Volunteering</div>
-        </div>
-      </div>
+    <div class="header-group">
+        <h1 class="section-h">WORLD PREMIERES</h1>
+        <p class="section-subtitle">Accredited milestones that scale globally.</p>
+    </div>
+    
+    <div class="gateway-container">
+    <div class="card" 
+         onclick="openDetail('sub-certs-list', 'movies')" 
+         style="background-image: url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800'); 
+                height: 9vw; width: 15vw; background-size: cover; background-position: center;">
+      <div class="card-meta">Certifications</div>
+    </div>
+
+    <div class="card" 
+         onclick="openDetail('sub-volunteer', 'movies')" 
+         style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600'); 
+                height: 9vw; width: 15vw; background-size: cover; background-position: center;">
+      <div class="card-meta">Volunteering</div>
+    </div>
+</div>
     </div>
   </section>
 
@@ -1137,19 +1146,23 @@
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">The Master Project Library</h1>
     <div class="content-list">
-      <div class="item-card" onclick="openDetail('sub-fire', 'series')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-fire', 'series')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>IoT Fire Detection System</b>
         AQI, smoke, and temperature sensors tuned for real agricultural fields with minimal false alarms.
       </div>
-      <div class="item-card" onclick="openDetail('sub-algo', 'series')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-algo', 'series')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Algorithm Visualizer</b>
-        C + Raylib engine for visualizing sorting, pathfinding, and backtracking.
+        C ++ Raylib engine for visualizing sorting, pathfinding, and backtracking.
       </div>
-      <div class="item-card" onclick="openDetail('sub-trs', 'series')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-trs', 'series')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Tourist Reservation System</b>
         C++ OOP-based console app handling bookings, search, and cancellations.
       </div>
-      <div class="item-card" onclick="openDetail('sub-api', 'series')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-api', 'series')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Postman Library API v2</b>
         RESTful CRUD and Postman-based testing.
       </div>
@@ -1161,19 +1174,23 @@
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">Skill Mastery Series</h1>
     <div class="content-list">
-      <div class="item-card" onclick="openDetail('sub-skill-core', 'series-skill')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-skill-core', 'series-skill')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Core Engineering Skills</b>
         Foundation layer under core ECE subjects and lab discipline.
       </div>
-      <div class="item-card" onclick="openDetail('sub-skill-programming', 'series-skill')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-skill-programming', 'series-skill')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Programming Systems Skills</b>
-        C, problem solving, OOP, APIs, and a disciplined debugging mindset.
+        C++, problem solving, APIs, and a disciplined debugging mindset.
       </div>
-      <div class="item-card" onclick="openDetail('sub-skill-web-series', 'series-skill')">
+      <div class="item-card has-more-info"onclick="openDetail('sub-skill-web-series', 'series-skill')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Web Frontend Skills</b>
         HTML, CSS, JS, layouts, and interactive UIs like this portfolio.
       </div>
-      <div class="item-card" onclick="openDetail('sub-skill-soft', 'series-skill')">
+      <div class="item-card has-more-info" onclick="openDetail('sub-skill-soft', 'series-skill')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
         <b>Soft & Creative Skills</b>
         Communication, performance, and creative expression through music.
       </div>
@@ -1211,8 +1228,8 @@
     <p class="detail-p"><b>Scope:</b> Programming fundamentals and systems thinking</p>
     <div class="content-list">
       <div class="item-card">
-        <b>C</b>
-        Primary language for DSA, the TRS project, and low-level system-style logic.
+        <b>C++</b>
+       Primary language for complex problem-solving and optimizing data structures to build efficient, scalable systems.
       </div>
       <div class="item-card">
         <b>Data Structures & Algorithms</b>
@@ -1220,15 +1237,11 @@
       </div>
       <div class="item-card">
         <b>Object-Oriented Programming</b>
-        Used in TRS and API design to enforce structure, reuse, and clarity.
+        Used in Reservation System and API design to enforce structure, reuse, and clarity.
       </div>
       <div class="item-card">
         <b>REST APIs</b>
         Understanding request/response cycles, endpoints, and debugging with Postman.
-      </div>
-      <div class="item-card">
-        <b>File Handling</b>
-        Used to persist data reliably in C/C++ console projects like TRS.
       </div>
     </div>
   </section>
@@ -1240,15 +1253,19 @@
     <div class="content-list">
       <div class="item-card">
         <b>HTML5</b>
-        Semantic structure and clean layout for portfolio and project pages.
+        Semantic structure and accessible layout for personal and academic sites.
       </div>
       <div class="item-card">
-        <b>CSS3 (Flexbox/Grid)</b>
-        Netflix-style rows, cards, and responsive layouts like this page.
+        <b>CSS3</b>
+        Flexbox, grid, and responsive design used in this Netflix-style UI.
       </div>
       <div class="item-card">
-        <b>Vanilla JavaScript</b>
-        SPA-style navigation stack, back logic, and interactivity without frameworks.
+        <b>JavaScript</b>
+        DOM events, screen navigation, and state management for this single-page portfolio.
+      </div>
+      <div class="item-card">
+        <b>UI Consistency</b>
+        Maintaining a consistent design language across sections and routes.
       </div>
     </div>
   </section>
@@ -1256,311 +1273,548 @@
   <section class="sub-screen" id="sub-skill-soft">
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">Skill Track: Soft & Creative</h1>
-    <p class="detail-p"><b>Scope:</b> Communication and creative identity</p>
+    <p class="detail-p"><b>Scope:</b> Communication, performance, and consistency</p>
     <div class="content-list">
       <div class="item-card">
-        <b>Public Relations (Parola)</b>
-        Clear communication, coordination, and calm execution during college events.
+        <b>Communication</b>
+        Presenting work clearly in both technical and non-technical settings.
       </div>
       <div class="item-card">
-        <b>Stage Performance (Crescendo)</b>
-        Singing live, handling nerves, and connecting with audiences.
+        <b>Teamwork</b>
+        Coordinating with peers during labs, events, and group assignments.
       </div>
       <div class="item-card">
-        <b>Content Creation</b>
-        Recording, editing, and publishing song covers and short-form content.
+        <b>Stage Performance</b>
+        Singing and performing at cultural events.
+      </div>
+      <div class="item-card">
+        <b>Consistency</b>
+        Addicted to the process—from late-night content edits and learning new songs to guitar riffs and dance practice. I show up to learn beyond deadlines and grind when no one is watching. Expert? No. Consistent? Always.
       </div>
     </div>
   </section>
 
-  <!-- CERT CATEGORY -->
-  <section class="sub-screen" id="sub-certs-list">
+  <!-- ABOUT / KNOW MORE -->
+  <section class="sub-screen" id="sub-about">
     <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Certification Library Categories</h1>
+    <h1 class="section-h">About Yash</h1>
+    <p class="detail-p">
+      B.Tech Candidate in Electronics and Communication Engineering | JIIT Noida
+    </p>
+    <p class="detail-p">
+      A performance-driven engineering student with a deep-seated commitment to fundamental rigor and systematic execution. Unlike conventional academic approaches, my focus lies in bridging the gap between theoretical electronics and functional implementation. I operate on a philosophy of "Quiet Consistency," believing that high-quality engineering is a result of daily disciplined practice and the grit to solve problems at their root.
+    </p>
+  </section>
+
+  <section class="sub-screen" id="sub-know-more">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Know More About Yash</h1>
+    <p class="detail-p">
+      My journey is driven by a deep-seated curiosity about how things actually work under the hood. I’ve always preferred the quiet grind of a personal project or a deep-dive research session over making loud claims. For me, the real win is that moment of click—when a complex concept finally makes sense, or a piece of logic I’ve been building runs exactly the way I envisioned
+    </p>
+    <p class="detail-p">
+     I don’t see my interests as just hobbies; they are my daily discipline. The hours I spend on music, dance practice, or editing content are where I learned the true value of showing up when no one is watching. I’m addicted to that process of working in the dark, knowing that the only way to master any craft is to respect the hours of rehearsal it requires.
+    </p>
+    <p class="detail-p">
+     I’ve intentionally explored different fields because I refuse to be put in a box. I’d rather have a versatile toolkit than a single, narrow skill set. My philosophy is simple: "Build-First." I would much rather show you something I’ve actually created than talk about what I plan to do. I value working results and the grit it takes to reach them, every single time.
+    </p>
+    <p class="detail-p">
+    On the flip side, I tend to get hyper-focused. When I’m trying to understand the root of a problem, I can get so lost in the details that I lose track of time. It’s a habit of trying to make the foundation perfect, which I’m now learning to balance with the need to just get things done. At the end of the day, I’m just a man who values fundamentals, real effort, and the habit of staying consistent.
+    </p>
+  </section>
+
+  <!-- CORE ECE DETAIL -->
+  <section class="sub-screen" id="sub-core-ece">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Core ECE Foundations</h1>
+    <p class="detail-p">
+      Core ECE is the baseline: Digital Electronics, Signals and Systems, and Communication Systems. The aim is to connect theory to lab behaviour and real-world signals.
+    </p>
     <div class="content-list">
-      <div class="item-card" onclick="openDetail('sub-cert-tech', 'movies')">
-        <b>Programming Systems</b>
-        C, JavaScript, APIs, prompt engineering, and security basics.
+      <div class="item-card">
+        <b>Digital Electronics</b>
+        Combinational and sequential circuit design, truth tables, Karnaugh maps, and implementation in lab setups.
       </div>
-      <div class="item-card" onclick="openDetail('sub-cert-data', 'movies')">
-        <b>Data Analytics</b>
-        Analytics foundations, GenAI analytics, probability, and market awareness.
+      <div class="item-card">
+        <b>Signals & Systems</b>
+        Continuous and discrete-time signals, LTI systems, convolution, and frequency-domain thinking.
       </div>
-      <div class="item-card" onclick="openDetail('sub-cert-mgmt', 'movies')">
-        <b>Management & Communication</b>
-        Communication, operations, talent, aptitude, and personality-focused courses.
+      <div class="item-card">
+        <b>Communication Systems</b>
+        Modulation schemes, noise, SNR, and understanding how links behave under real constraints.
       </div>
-      <div class="item-card" onclick="openDetail('sub-cert-creative', 'movies')">
-        <b>Creative Digital</b>
-        Digital marketing and video-editing exploration.
+      <div class="item-card">
+        <b>Lab Observations</b>
+        Connecting derivations from class with measurements on equipment and recorded waveforms.
       </div>
     </div>
   </section>
 
-  <!-- PROJECT DETAIL – UPDATED TEXTS -->
+  <!-- LABS DETAIL -->
+  <section class="sub-screen" id="sub-labs">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Labs & Debugging</h1>
+    <p class="detail-p">
+      Labs are treated as the place where concepts become real. The focus is on careful observation, debugging, and understanding why something fails before patching it.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Digital Labs</b>
+        Implementing logic designs, checking outputs on hardware, and correcting wiring and timing mistakes.
+      </div>
+      <div class="item-card">
+        <b>Communication Labs</b>
+        Worked with modulation, demodulation, and understanding the effect of channel variations.
+      </div>
+      <div class="item-card">
+        <b>Measurement Discipline</b>
+        Taking readings seriously, writing them clearly, and not manipulating results for convenience.
+      </div>
+      <div class="item-card">
+        <b>Debug Mindset</b>
+        Stepping through wiring, code, and assumptions when something behaves unexpectedly.
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRE PROJECT -->
   <section class="sub-screen" id="sub-fire">
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">IoT Fire Detection System</h1>
-
     <p class="detail-p">
-      <b>Problem & Context:</b>
-      Detecting early-stage fire in agricultural fields is challenging because small smoke bursts and environmental noise must be ignored while real risk is captured. The goal of the system was to combine raw sensor data with tuned thresholds to generate meaningful alerts only when needed.
+      A project aimed at detecting fire in agricultural fields using a combination of smoke, temperature, and air quality indicators rather than relying on a single sensor.
     </p>
-    <p class="detail-p">
-      <b>Architecture & Stack:</b>
-      AQI, smoke, and temperature sensors were interfaced with a microcontroller, and multi-sensor fusion logic was implemented where each reading was mapped to calibrated ranges. Processing was done with C-style logic: per-sensor weighting, a combined risk score, and tiered alert levels (safe, caution, critical) that could trigger hardware outputs or notifications.
-    </p>
-    <p class="detail-p">
-      <b>Key Learnings:</b>
-      The project showed that production-like systems depend not only on a single threshold but on noise filtering, debounce logic, and environment-specific tuning. This experience forms a base for future IoT or embedded work where reliability and control over false positives directly influence user trust.
-    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Core Idea</b>
+        Combine multiple sensor readings to reduce false alarms caused by dust, fog, or momentary disturbances.
+      </div>
+      <div class="item-card">
+        <b>Sensors & Inputs</b>
+        Temperature, smoke, and AQI sensors feeding into a microcontroller that evaluates thresholds and patterns.
+      </div>
+      <div class="item-card">
+        <b>Alerts & Output</b>
+        When thresholds are crossed in a consistent pattern, alerts can be triggered for timely response.
+      </div>
+      <div class="item-card">
+        <b>Learning Outcome</b>
+        Practical understanding of sensor calibration, noise, and the gap between ideal and real-world data.
+      </div>
+    </div>
   </section>
 
+  <!-- ALGO VISUALIZER -->
   <section class="sub-screen" id="sub-algo">
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">Algorithm Visualizer</h1>
-
     <p class="detail-p">
-      <b>Objective:</b>
-      Move DSA concepts beyond notebook pseudocode by turning C implementations into real-time visuals, so comparisons, swaps, path choices, and backtracking steps are clearly visible on screen.
+      A C++-based project using Raylib to visually show how algorithms behave over time instead of just printing outputs.
     </p>
-    <p class="detail-p">
-      <b>Implementation:</b>
-      Using C with Raylib, a modular engine was built that maps sorting algorithms (Bubble, Selection, Insertion, Merge, Quick, Radix, Bucket, Cocktail), Dijkstra’s shortest path, and N-Queens backtracking into visual states. Each algorithm has its own update–render loop, making time complexity visible through bar heights, colors, and animation speed.
-    </p>
-    <p class="detail-p">
-      <b>Impact & Learning:</b>
-      The visualizer changed the debugging style: instead of only catching segmentation faults or wrong outputs, it became possible to catch wrong frame transitions, stuck states, and unnatural animations. This improved both reasoning and code quality and serves as a strong portfolio piece that demonstrates DSA understanding at an execution level, not just theoretical.
-    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Sorting Algorithms</b>
+        Visual bars move and swap as algorithms like bubble, selection, or quicksort run step by step.
+      </div>
+      <div class="item-card">
+        <b>Pathfinding</b>
+        Grids and nodes show how traversal algorithms explore paths and backtrack.
+      </div>
+      <div class="item-card">
+        <b>Backtracking</b>
+        Visual traces of decisions and rollbacks that are usually hidden in console programs.
+      </div>
+      <div class="item-card">
+        <b>Understanding Time</b>
+        Connecting time complexity to how long the visualizations actually take when input size grows.
+      </div>
+    </div>
   </section>
 
+  <!-- TRS -->
   <section class="sub-screen" id="sub-trs">
     <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Tourist Reservation System (C++)</h1>
-
+    <h1 class="section-h">Tourist Reservation System</h1>
     <p class="detail-p">
-      <b>System Design:</b>
-      A console-based C++ application with clearly separated admin and user flows, implemented using OOP pillars (abstraction, inheritance, polymorphism, encapsulation). Core entities such as User, Booking, and Package were modeled as classes with well-defined responsibilities.
+      A C++ OOP console project that simulates a reservation system for tourists, focusing on structure and reliability.
     </p>
-    <p class="detail-p">
-      <b>Features & Flow:</b>
-      The system supports booking creation, search, cancellation, and simple payment simulations, with all operations persisted via file-based storage. Input validation, duplicate booking checks, and edge-case handling keep user journeys predictable and stable, even without a graphical interface.
-    </p>
-    <p class="detail-p">
-      <b>Outcome:</b>
-      This project introduced production-style thinking: dealing with logs, error messages, and data consistency while breaking logic into reusable functions and classes. It acts as a strong starting point for backend or systems-oriented roles.
-    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Core Features</b>
+        Booking, searching, and cancelling reservations using clean menu flows.
+      </div>
+      <div class="item-card">
+        <b>Object-Oriented Design</b>
+        Classes for customers, bookings, and destinations to keep logic organized.
+      </div>
+      <div class="item-card">
+        <b>File Handling</b>
+        Data persistence using file operations so that information is not lost between runs.
+      </div>
+      <div class="item-card">
+        <b>Error Handling</b>
+        Checking inputs, handling invalid choices, and preventing crashes on bad data.
+      </div>
+    </div>
   </section>
 
+  <!-- API PROJECT -->
   <section class="sub-screen" id="sub-api">
     <button class="back-btn back-logic">←</button>
     <h1 class="section-h">Postman Library API v2</h1>
-
     <p class="detail-p">
-      <b>API Scope:</b>
-      A library-style REST API where CRUD operations for books and users were designed with clear endpoints, request bodies, and status codes. The focus was on predictable contracts and clean responses, not just basic connectivity.
+      A REST-style project modeled as a library system, tested thoroughly using Postman collections.
     </p>
-    <p class="detail-p">
-      <b>Testing & Workflow:</b>
-      Postman collections, environments, and test scripts were used to cover both happy-path and negative scenarios, such as invalid payloads, missing fields, or unauthorized requests. After each change, the collection was re-run to catch regressions early.
-    </p>
-    <p class="detail-p">
-      <b>Professional Learning:</b>
-      The project helped develop an “API-first” mindset—prioritising documentation, consistent naming, and disciplined status-code usage. These habits transfer directly to real-world backend or API testing work, where reliability and clarity shape team collaboration.
-    </p>
-  </section>
-
-  <!-- SKILLS HIGH-LEVEL -->
-  <section class="sub-screen" id="sub-skill-tech">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Technical Mastery</h1>
     <div class="content-list">
       <div class="item-card">
-        <b>C Programming</b>
-        Primary language for problem solving, lab work, and system-style thinking.
+        <b>Endpoints</b>
+        Standard CRUD operations for books, users, and borrow/return flows.
       </div>
       <div class="item-card">
-        <b>Data Structures & Algorithms</b>
-        Applied in the visualizer and projects as tools for clarity, not just contests.
+        <b>Postman Collections</b>
+        Organized requests with environments to quickly verify behaviour and regressions.
       </div>
       <div class="item-card">
-        <b>Object-Oriented Programming</b>
-        Used in TRS and API design to enforce structure, reuse, and clear boundaries.
+        <b>Error Scenarios</b>
+        Testing invalid data, missing fields, and edge cases instead of only happy paths.
       </div>
       <div class="item-card">
-        <b>REST APIs & Postman</b>
-        Understanding endpoints, payloads, status codes, and full-cycle debugging.
+        <b>Takeaways</b>
+        Clear understanding of request/response cycles, status codes, and API debugging.
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT LIST -->
+  <section class="sub-screen" id="sub-certs-list">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certification Library</h1>
+    <p class="detail-p">
+      A collection of certifications across programming, data, communication, and creative domains, focusing on both technical and soft skills.
+    </p>
+    <div class="content-list">
+      <div class="item-card has-more-info" onclick="openDetail('sub-cert-tech', 'movies')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
+        <b>Programming & Systems</b>
+        Certifications in C, C++, programming fundamentals, and related tools.
+      </div>
+      <div class="item-card has-more-info" onclick="openDetail('sub-cert-data', 'movies')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
+        <b>Data Analytics</b>
+        Courses covering data handling, analysis basics, and visual understanding.
+      </div>
+      <div class="item-card has-more-info" onclick="openDetail('sub-cert-mgmt', 'movies')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
+        <b>Management & Communication</b>
+        Certificates focused on leadership, communication, and professional skills.
+      </div>
+      <div class="item-card has-more-info"onclick="openDetail('sub-cert-creative', 'movies')">
+        <div class="info-overlay">CLICK TO KNOW MORE</div>
+        <b>Creative & Digital</b>
+        Certificates around design, creativity, and digital skills.
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT DETAIL SCREENS -->
+  <section class="sub-screen" id="sub-cert-tech">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certifications: Programming & Systems</h1>
+    <p class="detail-p">
+      Technical certifications that validate understanding of programming fundamentals and system-level thinking.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>C / C++ Courses</b>
+        Core language fundamentals, problem solving, and basic projects for practice.
+      </div>
+      <div class="item-card">
+        <b>Programming Foundations</b>
+        Courses that solidify loops, conditions, functions, and structured thinking.
+      </div>
+      <div class="item-card">
+        <b>Tools & Environments</b>
+        Exposure to standard IDEs and workflows for writing, compiling, and debugging.
+      </div>
+      <div class="item-card">
+        <b>Debug Mindset</b>
+        How to read errors, isolate issues, and fix bugs systematically.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-data">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certifications: Data Analytics</h1>
+    <p class="detail-p">
+      Courses that introduce data handling, basic analysis, and interpretation of trends.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Data Basics</b>
+        Understanding rows, columns, types of data, and simple cleaning steps.
+      </div>
+      <div class="item-card">
+        <b>Visualization</b>
+        Reading charts and graphs to understand patterns rather than just numbers.
+      </div>
+      <div class="item-card">
+        <b>Tools</b>
+        Introductory exposure to spreadsheets or analytics platforms used in coursework.
+      </div>
+      <div class="item-card">
+        <b>Application</b>
+        Thinking about how data can guide decisions in engineering and projects.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-mgmt">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certifications: Management & Communication</h1>
+    <p class="detail-p">
+      Certifications that build confidence in working with people, planning tasks, and communicating clearly.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Communication Skills</b>
+        Fundamentals of clear and respectful communication in teams and presentations.
+      </div>
+      <div class="item-card">
+        <b>Time & Task Management</b>
+        Approaches for planning, prioritizing, and completing work on time.
+      </div>
+      <div class="item-card">
+        <b>Leadership Basics</b>
+        Introductory ideas about taking responsibility and supporting a group.
+      </div>
+      <div class="item-card">
+        <b>Professional Behaviour</b>
+        Understanding expectations in formal and semi-formal environments.
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-screen" id="sub-cert-creative">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Certifications: Creative & Digital</h1>
+    <p class="detail-p">
+      Creative certifications that support design sense, digital presence, and expressive skills.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Design & Aesthetics</b>
+        Basic understanding of layouts, colours, and visual structure.
+      </div>
+      <div class="item-card">
+        <b>Digital Tools</b>
+        Experience with software used to create or edit content.
+      </div>
+      <div class="item-card">
+        <b>Personal Branding</b>
+        Thinking about how to present work and skills online in a simple, honest way.
+      </div>
+      <div class="item-card">
+        <b>Creative Confidence</b>
+        Building comfort with sharing creative work such as music or designs.
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER / BEYOND -->
+  <section class="sub-screen" id="sub-volunteer">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Parola & Volunteering</h1>
+    <p class="detail-p">
+      Participation in student bodies like Parola focuses on responsibility, communication, and representing others honestly.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Parola Involvement</b>
+        Supporting events and communication while learning how to keep things moving between peers and faculty. Managing the coordination for Parola was a lesson in human dynamics and clear, direct exchange. Focusing on the bridge between teams ensured that every event stayed on track and the flow remained consistent.
+      </div>
+      <div class="item-card">
+        <b>Concert</b>
+        Understanding how different people work and how to keep things moving when there is zero room for error. Handling the logistics of the annual concert was a deep dive into human dynamics and operational discipline. Solving problems quietly behind the scenes ensured the final show felt seamless and consistent.
+      </div>
+      <div class="item-card">
+        <b>Crescendo Involvement</b>
+        Performing through the noise and figuring out how to stay steady even when the technical setup was working against me. Handling the frustration of a faulty mic and lost stage opportunities at Crescendo was a lesson in grit and human dynamics. Prioritizing the performance over the glitches ensured that the momentum stayed alive, no matter the situation.
+      </div>
+    </div>
+  </section>
+
+  <!-- INNER JOURNEY -->
+  <section class="sub-screen" id="sub-inner">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Inner Journey</h1>
+    <p class="detail-p">
+      Beyond marks and checklists, there is an inner journey based on consistency, self-awareness, and handling ups and downs calmly.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Consistency</b>
+        Building a habit of studying, practicing, and reflecting regularly.
+      </div>
+      <div class="item-card">
+        <b>Handling Pressure</b>
+        Learning to deal with exams, project deadlines, and expectations without breaking down.
+      </div>
+      <div class="item-card">
+        <b>Self-Reflection</b>
+        Looking honestly at what worked, what failed, and what needs to change.
+      </div>
+      <div class="item-card">
+        <b>Balance</b>
+        Giving space to music, friends, and rest along with academics.
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER INTENT -->
+  <section class="sub-screen" id="sub-career">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Career Intent</h1>
+    <p class="detail-p">
+      The aim is to build a profile that is honest, project-first, and flexible enough to align with opportunities in core, software, or related roles.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>Short-Term</b>
+        Strengthen fundamentals, complete good projects, and gain credible certifications.
+      </div>
+      <div class="item-card">
+        <b>Mid-Term</b>
+        Explore internships or roles where ECE concepts and programming both matter.
+      </div>
+      <div class="item-card">
+        <b>Long-Term</b>
+        Move towards roles that value clear thinking, problem solving, and reliable execution.
+      </div>
+      <div class="item-card">
+        <b>Guiding Principle</b>
+        Let actual work and behaviour speak louder than claims on a CV.
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME SKILL SUB-SCREENS -->
+  <section class="sub-screen" id="sub-skill-tech">
+    <button class="back-btn back-logic">←</button>
+    <h1 class="section-h">Technical Skillset</h1>
+    <p class="detail-p">
+      A practical stack built around C, C++, DSA, REST APIs, and frontend basics, always tied to projects instead of theory alone.
+    </p>
+    <div class="content-list">
+      <div class="item-card">
+        <b>C / C++</b>
+        Main languages for console applications, Reservation System, and algorithm visualizations.
+      </div>
+      <div class="item-card">
+        <b>DSA</b>
+        Arrays, lists, stacks, queues, and trees applied in actual code, not only on paper.
+      </div>
+      <div class="item-card">
+        <b>APIs & Tools</b>
+        Understanding HTTP, endpoints, and Postman-based debugging.
       </div>
     </div>
   </section>
 
   <section class="sub-screen" id="sub-skill-web">
     <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Web Frontend Foundations</h1>
+    <h1 class="section-h">Web Frontend Skills</h1>
+    <p class="detail-p">
+      The Netflix-style portfolio itself is a demonstration of layout, styling, and client-side navigation with vanilla HTML, CSS, and JS.
+    </p>
     <div class="content-list">
       <div class="item-card">
-        <b>HTML & CSS</b>
-        Used to build structured layouts like this Netflix-style portfolio.
+        <b>Layouts</b>
+        Building sections, rows, and responsive rails that feel natural to browse.
       </div>
       <div class="item-card">
-        <b>JavaScript (Vanilla)</b>
-        Single-page navigation, simple state handling, and interactivity without frameworks.
+        <b>Animations</b>
+        Smooth hover, intro, and transition effects without overloading the viewer.
+      </div>
+      <div class="item-card">
+        <b>Components</b>
+        Reusable card designs and sub-screen patterns used throughout the page.
+      </div>
+      <div class="item-card">
+        <b>State & Navigation</b>
+        Managing which screen is visible using simple but clear JavaScript.
       </div>
     </div>
   </section>
 
   <section class="sub-screen" id="sub-skill-ai">
     <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">AI Tools & Prompting</h1>
+    <h1 class="section-h">AI Tools & Prompts</h1>
     <p class="detail-p">
-      Exploring AI as a collaborator—for brainstorming, debugging, and extending ideas—while staying honest about current depth instead of overstating expertise.
+      Using AI tools to speed up research, debugging, and brainstorming without skipping the effort of understanding concepts.
     </p>
-  </section>
-
-  <!-- CERT DETAIL -->
-  <section class="sub-screen" id="sub-cert-tech">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Programming Systems Certificates</h1>
-    <div class="content-list">
-      <div class="item-card"><b>C Programming</b> – LetsUpgrade</div>
-      <div class="item-card"><b>JavaScript</b> – LetsUpgrade</div>
-      <div class="item-card"><b>Postman API Fundamentals</b> – Postman</div>
-      <div class="item-card"><b>Develop Your Own Google Assistant with AI</b></div>
-      <div class="item-card"><b>Prompt Engineering</b> – LetsUpgrade</div>
-      <div class="item-card"><b>Introduction to Ethical Hacking</b> – Great Learning</div>
-      <div class="item-card"><b>Cybersecurity Basics</b> – Great Learning</div>
-    </div>
-  </section>
-
-  <section class="sub-screen" id="sub-cert-data">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Data Analytics Certificates</h1>
-    <div class="content-list">
-      <div class="item-card"><b>Data Science Foundations</b> – Great Learning</div>
-      <div class="item-card"><b>Tata GenAI Powered Data Analytics</b> – Forage</div>
-      <div class="item-card"><b>Probability</b> – Great Learning</div>
-      <div class="item-card"><b>Data Analysis (Conceptual)</b> – Great Learning</div>
-      <div class="item-card"><b>Stock Market Basics</b></div>
-      <div class="item-card"><b>Business Analysis</b> – LinkedIn Learning</div>
-    </div>
-  </section>
-
-  <section class="sub-screen" id="sub-cert-mgmt">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Management & Communication Certificates</h1>
-    <div class="content-list">
-      <div class="item-card"><b>Effective Communication</b> – Great Learning</div>
-      <div class="item-card"><b>Smart English Basics for Professionals</b></div>
-      <div class="item-card"><b>Communication Management</b></div>
-      <div class="item-card"><b>Talent Management</b></div>
-      <div class="item-card"><b>Operational Excellence & Critical Thinking</b></div>
-      <div class="item-card"><b>Quantitative Aptitude Basics</b></div>
-      <div class="item-card"><b>Personality Development</b></div>
-    </div>
-  </section>
-
-  <section class="sub-screen" id="sub-cert-creative">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Creative & Digital Certificates</h1>
-    <div class="content-list">
-      <div class="item-card"><b>Introduction to Digital Marketing</b></div>
-      <div class="item-card"><b>Learn Video Editing for Content Creators</b></div>
-    </div>
-  </section>
-
-  <!-- CORE / JOURNEY -->
-  <section class="sub-screen" id="sub-core-ece">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Core ECE Foundation</h1>
-    <p class="detail-p">
-      Digital Electronics, Signals and Systems, and Communication Systems learned through labs, experiments, and errors—with more focus on understanding than rote formulas.
-    </p>
-  </section>
-
-  <section class="sub-screen" id="sub-labs">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Labs & Debugging</h1>
-    <p class="detail-p">
-      Lab time meant wiring, debugging, and watching circuits and code misbehave until patterns became clear and intuition formed.
-    </p>
-  </section>
-
-  <!-- VOLUNTEERING / INNER -->
-  <section class="sub-screen" id="sub-volunteer">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Extra-Curricular Impact</h1>
     <div class="content-list">
       <div class="item-card">
-        <b>PR Member at Parola – The Literary Hub</b>
-        Handling communication, coordination, and on-ground execution of college events.
+        <b>Prompting</b>
+        Structuring questions clearly to get useful, precise responses.
       </div>
       <div class="item-card">
-        <b>Singer at Crescendo (Music Society)</b>
-        Performing song covers live on stage and learning to handle performance pressure.
+        <b>Debug Assistance</b>
+        Using AI to detect mistakes or suggest alternatives while still verifying manually.
+      </div>
+      <div class="item-card">
+        <b>Content Drafting</b>
+        Preparing initial drafts for descriptions that are later edited for honesty.
+      </div>
+      <div class="item-card">
+        <b>Learning Support</b>
+        Clarifying concepts quickly during self-study sessions.
       </div>
     </div>
-  </section>
-
-  <section class="sub-screen" id="sub-inner">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Inner Journey</h1>
-    <p class="detail-p">
-      Learning alone, attending workshops alone, choosing focused study over distractions, and continuing even when there was no external validation.
-    </p>
-  </section>
-
-  <section class="sub-screen" id="sub-career">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Career Intent</h1>
-    <p class="detail-p">
-      Looking for roles where fundamentals, clear thinking, and calm communication are valued, and where growth is measured over years rather than quick metrics.
-    </p>
-  </section>
-
-  <!-- ABOUT (Play Profile) – 1 professional para -->
-  <section class="sub-screen" id="sub-about">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Professional Snapshot</h1>
-    <p class="detail-p">
-      Pre-final year B.Tech ECE student at JIIT Noida, focused on building reliable systems through C/C++, DSA, and core ECE labs, with hands-on projects in IoT, algorithm visualization, and API development aimed at entry-level software or embedded engineering roles.
-    </p>
-  </section>
-
-  <!-- KNOW MORE – 3 paragraphs -->
-  <section class="sub-screen" id="sub-know-more">
-    <button class="back-btn back-logic">←</button>
-    <h1 class="section-h">Know More About Yash</h1>
-
-    <p class="detail-p">
-      Professionally, the B.Tech ECE program built a foundation in digital electronics, signals, and communication systems, which is combined with C/C++ programming, DSA, and problem solving to build practical projects. The approach is structured: first understand the concept, then translate it into code, circuits, or APIs, and finally test and refine until it reaches a reliable state.
-    </p>
-    <p class="detail-p">
-      Academically, labs and assignments are treated as opportunities to understand behaviour rather than just earn marks—such as how sensors respond in real environments or how DSA code feels in runtime when it is visualized. Certifications in programming, data analytics, cybersecurity, and communication improve overall ecosystem awareness, so the profile does not depend on a single narrow skill.
-    </p>
-    <p class="detail-p">
-      From a career perspective, the focus is on early-stage roles where clean code, debugging discipline, and calm communication create real value. The ideal environment is a team that respects fundamentals, documentation, and long-term growth, with work around IoT-style systems, backend services, or performance-focused tools that allow skills to deepen over time.
-    </p>
   </section>
 
   <script>
-    // SOUND + INTRO
-    const tudum = document.getElementById("tudum");
+    const audio = document.getElementById("tudum");
+    let audioUnlocked = false;
+
+    function unlockAudio() {
+      if (!audioUnlocked) {
+        audio.play().then(() => {
+          audio.pause();
+          audio.currentTime = 0;
+          audioUnlocked = true;
+          console.log("Sound System Unlocked");
+        }).catch(e => console.log("Waiting for user interaction..."));
+      }
+    }
+
+    document.getElementById("profile-card").onclick = () => {
+      if (audioUnlocked) {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        audio.play();
+      }
+      openHomeHard();
+    };
+
+    const homeScreen = document.getElementById("home-screen");
+    const profileScreen = document.getElementById("profile-screen");
+    const introStage = document.getElementById("intro-stage");
     const muteBtn = document.getElementById("mute-btn");
-    const profileCard = document.getElementById("profile-card");
     let soundOn = false;
 
     muteBtn.onclick = () => {
       soundOn = !soundOn;
       muteBtn.innerText = soundOn ? "🔊" : "🔇";
+      if (!soundOn) {
+        audio.pause();
+      }
     };
 
     window.onload = () => {
       setTimeout(() => {
         muteBtn.classList.add("visible");
-        if (soundOn) {
-          tudum.currentTime = 0;
-          tudum.play().catch(() => {});
-        }
         setTimeout(() => {
           document.getElementById("intro-stage").style.display = "none";
           document.getElementById("profile-screen").classList.add("active");
@@ -1568,16 +1822,6 @@
       }, 500);
     };
 
-    // Profile click = sound + go home
-    profileCard.addEventListener("click", () => {
-      if (soundOn) {
-        tudum.currentTime = 0;
-        tudum.play().catch(() => {});
-      }
-      openHomeHard();
-    });
-
-    // NAVIGATION STACK
     let navStack = [];
 
     function resetScreens() {
@@ -1595,18 +1839,29 @@
       el.style.display = displayType;
     }
 
+    function updateNavHighlight(navLabel) {
+      document.querySelectorAll('.nav-links span').forEach(link => {
+        link.classList.remove('active-nav');
+        if (link.innerText.trim().toLowerCase() === navLabel.toLowerCase()) {
+          link.classList.add('active-nav');
+        }
+      });
+    }
+
     function openHomeHard() {
       navStack = [];
       resetScreens();
       const homeEl = document.getElementById("home-screen");
       showScreen(homeEl, "block");
       homeEl.scrollTop = 0;
+      updateNavHighlight('Home');
     }
 
-    function openCatalog(id) {
+    function openCatalog(id, label) {
       navStack.push({ type: "catalog", id: id });
       resetScreens();
       showScreen(document.getElementById(id), "flex");
+      updateNavHighlight(label);
     }
 
     function openDetail(id, from) {
@@ -1649,7 +1904,7 @@
     };
 
     document.querySelectorAll(".nav-links span").forEach((sp) => {
-      if (sp.textContent.trim() === "Home") {
+      if (sp.textContent.trim().toLowerCase() === "home") {
         sp.onclick = () => openHomeHard();
       }
     });
@@ -1657,5 +1912,7 @@
       lg.onclick = () => openHomeHard();
     });
   </script>
+  
+  
 </body>
 </html>
