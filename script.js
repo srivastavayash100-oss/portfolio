@@ -1,9 +1,9 @@
-/* --- YASH'S MASTERPIECE JS: FINAL STABLE VER. --- */
 
-// 1. Global Navigation Stack
+
+
 let navStack = [];
 
-// 2. Audio System Unlock (Forced for Profiles)
+
 function unlockAndPlay() {
     const audio = document.getElementById("tudum");
     if (audio) {
@@ -12,7 +12,7 @@ function unlockAndPlay() {
     }
 }
 
-// 3. Profile Card Click - Isse sound unlock aur play dono hoga
+
 document.addEventListener('DOMContentLoaded', () => {
     const profileCard = document.getElementById("profile-card");
     if (profileCard) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 4. Screen Management Logic
+
 function resetScreens() {
     document.querySelectorAll(".screen, .sub-screen, .catalog-screen").forEach((s) => {
         s.classList.remove("active");
@@ -38,7 +38,7 @@ function resetScreens() {
     }
 }
 
-// 5. Hard Reset to Home
+
 function openHomeHard() {
     navStack = []; 
     resetScreens();
@@ -63,7 +63,7 @@ function openHomeHard() {
     }
 }
 
-// 6. Scroll Visibility Logic
+
 const home = document.getElementById("home-screen");
 if (home) {
     home.onscroll = () => {
