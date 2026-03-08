@@ -1,15 +1,3 @@
-/* * ========================================================
- * PROJECT  : Netflix Visual Saga (Portfolio Edition)
- * AUTHOR   : Yash Srivastava
- * IDENTITY : srivastavayash100-oss
- * VERSION  : 1.0.0
- * CREATED  : February 2026
- * --------------------------------------------------------
- * NOTE: This CSS architecture, including the custom "Sexy N" 
- * animations and "Full Tile Blur" logic, is a custom-built 
- * implementation by Yash Srivastava.
- * ========================================================
- */
 
 /* 1. Global & Scroll Fix */
 body {
@@ -19,6 +7,8 @@ body {
     overflow-x: hidden;
     overflow-y: auto; 
     cursor: default;  
+    /* Fluid base font: Desktop pe clean, Mobile pe readable */
+    font-size: clamp(15px, 1vw, 18px); 
 }
 
 #home-screen {
@@ -36,16 +26,28 @@ body {
     cursor: pointer !important;
 }
 
-/* Email Copy Cursor Fix */
 #home-footer a[href^="mailto:"] {
     cursor: copy !important;
 }
 
-/* 3. Sexy N Logo Styles */
+/* 3. YS Logo & Branding Glow */
 .sexy-n {
   width: 100%;
   filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.6));
   animation: logoBreath 2.5s ease-in-out infinite alternate;
+}
+
+.nav-logo {
+  color: #E50914 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+  transition: 0.3s ease;
+  font-size: 1.8rem;
+}
+
+.nav-logo:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 25px rgba(229, 9, 20, 0.9);
 }
 
 .intro-logo-wrap {
@@ -64,38 +66,75 @@ body {
   100% { transform: scale(1.1) translateZ(50px); filter: drop-shadow(0 0 45px rgba(229, 9, 20, 1)); }
 }
 
-/* 4. OVERLAP & STABILITY FIX (Minimize karne par clash nahi hoga) */
+/* 4. Billboard & Main Typography */
 .billboard {
     min-height: 85vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 4%;
     padding-bottom: 50px;
 }
 
+.billboard h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem) !important;
+}
+
+.billboard p {
+    font-size: clamp(1.05rem, 1.2vw, 1.3rem) !important;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+/* 5. Row Content Alignment (Left Aligned & Readable) */
+.row {
+    padding-left: 4% !important; 
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 2;
+}
+
+.row-header {
+    text-align: left !important;
+    font-size: 1.8rem !important; 
+    font-weight: 700;
+    color: #e5e5e5;
+    margin-bottom: 10px !important;
+}
+
+.row-sub {
+    text-align: left !important;
+    font-size: 1.15rem !important; /* Size increased for better readability */
+    color: #a3a3a3;
+    max-width: 850px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
 .main-view {
-    margin-top: 0 !important; /* Overlap rokne ke liye margin 0 kiya */
-    padding-top: 60px; /* Billboard text se safe distance */
+    margin-top: 0 !important;
+    padding-top: 60px;
     position: relative;
     z-index: 10;
     background: linear-gradient(to bottom, transparent, #141414 15%);
 }
 
-/* 5. BLOCK SIZE & RAIL FIX */
+/* 6. Rail & Card Stability */
 .rail {
     display: flex;
-    gap: 12px;
+    gap: 20px; /* Thoda gap badhaya taaki zoom clash na ho */
     overflow-x: auto;
+    overflow-y: visible !important; /* IMPORTANT: Taaki zoom aur text na kate */
     scrollbar-width: none;
-    padding: 2vw 0; 
+    padding: 40px 0; /* Vertical padding badhayi taaki zoom ke liye jagah mile */
     align-items: center;
+    -webkit-overflow-scrolling: touch;
 }
 .rail::-webkit-scrollbar { display: none; }
 
 .card {
-    /* Shape Stability: Resize karne par pichkega nahi */
-    min-width: 220px !important; 
-    height: 125px !important;    
+    min-width: 280px !important; /* Proper horizontal size */
+    height: 160px !important;    
     border-radius: 12px;
     background-size: cover;
     background-position: center;
@@ -104,7 +143,7 @@ body {
     transition: 0.4s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-/* 6. FINAL FULL TILE BLUR & OVERLAY */
+/* 7. Full Tile Blur & Overlay */
 .has-more-info {
     position: relative;
     overflow: hidden;
@@ -143,8 +182,84 @@ body {
 
 .has-more-info:hover {
     background: #111;
-    border: 2px solid var(--nf-red) !important;
+    border: 2px solid #E50914 !important;
     box-shadow: 0 0 40px rgba(229, 9, 20, 0.6) !important;
-    transform: scale(1.35) translateY(-5%); /* Smooth Netflix Zoom */
+    transform: scale(1.3) translateY(-5%); 
     z-index: 500 !important; 
 }
+
+/* 8. MASTER RESPONSIVE BLOCK (Mobile Optimization) */
+@media (max-width: 768px) {
+    .billboard {
+        height: 70vh;
+        padding: 120px 6% 0 6% !important;
+        justify-content: flex-start;
+    }
+    .billboard h1 {
+        font-size: 2.2rem !important; 
+    }
+    .billboard p {
+        font-size: 1.1rem !important;
+        max-width: 100%;
+    }
+    .billboard-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .billboard-buttons button {
+        width: 100%;
+        padding: 16px !important;
+        font-size: 1.1rem !important;
+        justify-content: center;
+    }
+    
+    .row {
+        padding-left: 6% !important;
+    }
+    .row-header {
+        font-size: 1.4rem !important;
+    }
+    .row-sub {
+        font-size: 1rem !important;
+        padding-right: 6%;
+    }
+
+    .card {
+        min-width: 80vw !important; /* Full width swipeable cards for mobile */
+        height: 160px !important;
+    }
+    .card-meta {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        font-size: 0.9rem !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    }
+    
+    .content-list {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    .sub-screen {
+        padding: 90px 6% 40px 6% !important;
+    }
+    .section-h {
+        font-size: 2.4rem !important;
+    }
+    .nav-links {
+        gap: 12px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Small screen navbar adjustment */
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.4rem !important;
+    }
+    .profile-card {
+        width: 140px !important;
+    }
+    .profile-gate h1 {
+        font-size: 1.8rem !important;
+    }
+} 
