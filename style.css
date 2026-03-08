@@ -259,7 +259,43 @@ body {
         gap: 12px;
         font-size: 0.75rem;
     }
+
+    /* FIX 1: Yash ke bgl wala Pill (Top Pill) */
+    .billboard h1 + span, 
+    .top-pill-class, /* Replace with your actual pill class name */
+    [class*="pill"] { 
+        font-size: 0.85rem !important; /* Increase from tiny to readable */
+        padding: 4px 12px !important;
+        margin-left: 10px !important;
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+
+    /* FIX 2: Details ke niche wale 3 pills (Bottom Group) */
+    .billboard-pills-container { /* Replace with your container class */
+        display: flex;
+        flex-wrap: wrap; /* Taki mobile me line break le sakein */
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    /* FIX 3: Text contrast (Jo vague lag raha hai) */
+    .billboard p {
+        font-size: 1.1rem !important;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.9); /* Pure white ke close takki clear dikhe */
+        font-weight: 400;
+    }
+
+    /* FIX 4: Metadata/Small Tags */
+    .pill-item { 
+        font-size: 0.75rem !important; 
+        letter-spacing: 0.5px;
+        background: rgba(255, 255, 255, 0.15) !important; /* Background thoda dark karo takki text dikhe */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
 }
+
 
 /* Small screen navbar adjustment */
 @media (max-width: 480px) {
