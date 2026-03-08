@@ -287,14 +287,27 @@ body {
         font-weight: 400;
     }
 
-    /* FIX 4: Metadata/Small Tags */
+    /* FIX 4: Metadata/Small Tags (Pills like Signal over Noise) */
     .pill-item { 
-        font-size: 0.75rem !important; 
-        letter-spacing: 0.5px;
-        background: rgba(255, 255, 255, 0.15) !important; /* Background thoda dark karo takki text dikhe */
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 0.9rem !important; /* Size increase kiya */
+        font-weight: 600 !important; /* Boldness badhayi */
+        letter-spacing: 0.3px;
+        padding: 6px 14px !important; /* Pill ko thoda bada kiya */
+        background: rgba(255, 255, 255, 0.12) !important; 
+        border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Border thoda sharp kiya */
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
     }
-}
+
+    /* Iske upar jo tagline hai usko bhi clear karne ke liye */
+    .billboard .tagline {
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+        color: #e5e5e5;
+    }
 
 
 /* Small screen navbar adjustment */
