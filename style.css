@@ -284,33 +284,36 @@ body {
 
     /* Metadata Badges (Netflix Look) */
     /* Metadata Badges - Increased for high legibility */
+    /* Metadata Badges - Making them much larger and solid for mobile */
     .pill-item { 
-        font-size: 1rem !important; /* Bumped up from 0.85rem */
-        font-weight: 900 !important; /* Max weight for solid look */
-        color: #fff !important;
-        background: rgba(128, 128, 128, 0.4) !important; /* Slightly darker for better contrast */
-        border: 2px solid rgba(255, 255, 255, 0.6) !important; /* Thicker, brighter border */
-        padding: 6px 14px !important; /* More padding for a bigger tap target */
+        font-size: 1.15rem !important; /* Significantly increased from 1rem */
+        font-weight: 900 !important; 
+        color: #ffffff !important;
+        background: rgba(0, 0, 0, 0.6) !important; /* Darker background for better white text pop */
+        border: 2px solid rgba(255, 255, 255, 0.8) !important; /* Brighter, thicker border */
+        padding: 8px 16px !important; /* More breathing room */
         border-radius: 4px !important;
         text-transform: uppercase;
-        letter-spacing: 0.8px;
-        backdrop-filter: blur(8px); /* Deeper blur for premium feel */
+        letter-spacing: 1px;
+        backdrop-filter: blur(10px); /* Deep premium blur */
         white-space: nowrap;
         display: inline-flex;
         align-items: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Adds depth */
     }
 
-    /* Tagline - Increased size and brightness */
+    /* Tagline - Making it bold and bright */
     .billboard .tagline {
-        font-size: 0.9rem !important; /* Bumped up from 0.75rem */
+        font-size: 1rem !important; /* Increased from 0.9rem */
         font-weight: 900 !important;
-        letter-spacing: 2.5px;
-        margin-bottom: 14px;
-        color: #ffffff !important; /* Pure white for maximum visibility */
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+        color: #ffffff !important; 
         text-transform: uppercase;
-        text-shadow: 2px 2px 5px rgba(0,0,0,1); /* Darker shadow to lift it off the background */
+        text-shadow: 2px 2px 8px rgba(0,0,0,1); /* Heavy shadow for maximum readability */
     }
 }
+
 
 /* Small screen navbar adjustment */
 @media (max-width: 480px) {
