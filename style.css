@@ -342,3 +342,85 @@ body {
         width: 100% !important;
     }
 }
+
+/* ========================================================
+ * EMERGENCY MOBILE OVERRIDE: Yash Portfolio Fix
+ * ======================================================== */
+
+@media screen and (max-width: 480px) {
+    /* 1. YASH Heading Fix */
+    .billboard h1 {
+        font-size: 3.5rem !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+    }
+
+    /* 2. Innovation Pill (Top) */
+    .billboard .innovation-tag, 
+    .billboard h1 + span, 
+    .billboard span:first-of-type {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        display: inline-block !important;
+        margin-bottom: 30px !important;
+        border-radius: 4px !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* 3. Description Paragraph (The Saga...) */
+    .billboard p {
+        font-size: 16px !important; /* Mobile readability standard */
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+        color: #ffffff !important;
+        width: 100% !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    /* 4. "TRANSFORMING COMPLEXITY..." (Visibility Fix) */
+    /* Screenshot mein ye gayab hai, isliye isse RED aur BOLD kiya hai */
+    .billboard .sub-text, 
+    .billboard p + span,
+    .billboard span[style*="uppercase"] {
+        font-size: 12px !important;
+        font-weight: 900 !important;
+        color: #E50914 !important; /* Netflix Red */
+        display: block !important;
+        margin: 30px 0 15px 0 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* 5. Signal Over Noise & Engineering Tags (The Main Issue) */
+    /* Inhe flex-wrap diya hai taaki ye ek dusre par na chadhein */
+    .billboard .tags-row, 
+    .billboard div:last-of-type {
+        display: flex !important;
+        flex-wrap: wrap !important; 
+        gap: 12px !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Targetting the actual pills (Signal, Bandwidth, Impedance) */
+    .billboard .tags-row span, 
+    .billboard .tech-tag,
+    .billboard div:last-of-type span {
+        font-size: 11px !important;
+        padding: 8px 14px !important;
+        background: rgba(229, 9, 20, 0.1) !important; /* Light Red tint */
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        border-radius: 4px !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+
+    /* 6. Billboard Buttons Spacing */
+    .billboard-buttons {
+        margin-top: 40px !important;
+        gap: 15px !important;
+    }
+}
