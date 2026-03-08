@@ -283,30 +283,32 @@ body {
     }
 
     /* Metadata Badges (Netflix Look) */
+    /* Metadata Badges - Increased for high legibility */
     .pill-item { 
-        font-size: 0.85rem !important;
-        font-weight: 800 !important;
+        font-size: 1rem !important; /* Bumped up from 0.85rem */
+        font-weight: 900 !important; /* Max weight for solid look */
         color: #fff !important;
-        background: rgba(128, 128, 128, 0.3) !important; 
-        border: 1.5px solid rgba(255, 255, 255, 0.4) !important; 
-        padding: 4px 12px !important;
+        background: rgba(128, 128, 128, 0.4) !important; /* Slightly darker for better contrast */
+        border: 2px solid rgba(255, 255, 255, 0.6) !important; /* Thicker, brighter border */
+        padding: 6px 14px !important; /* More padding for a bigger tap target */
         border-radius: 4px !important;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        backdrop-filter: blur(5px);
+        letter-spacing: 0.8px;
+        backdrop-filter: blur(8px); /* Deeper blur for premium feel */
         white-space: nowrap;
         display: inline-flex;
         align-items: center;
     }
 
+    /* Tagline - Increased size and brightness */
     .billboard .tagline {
-        font-size: 0.75rem !important;
+        font-size: 0.9rem !important; /* Bumped up from 0.75rem */
         font-weight: 900 !important;
-        letter-spacing: 2px;
-        margin-bottom: 12px;
-        color: #b3b3b3 !important;
+        letter-spacing: 2.5px;
+        margin-bottom: 14px;
+        color: #ffffff !important; /* Pure white for maximum visibility */
         text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        text-shadow: 2px 2px 5px rgba(0,0,0,1); /* Darker shadow to lift it off the background */
     }
 }
 
