@@ -211,6 +211,9 @@ body {
     .billboard p {
         font-size: 1.1rem !important;
         max-width: 100%;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
     }
     .billboard-buttons {
         flex-direction: column;
@@ -235,7 +238,7 @@ body {
     }
 
     .card {
-        min-width: 80vw !important; /* Full width swipeable cards for mobile */
+        min-width: 80vw !important; 
         height: 160px !important;
     }
     .card-meta {
@@ -260,56 +263,52 @@ body {
         font-size: 0.75rem;
     }
 
-    /* FIX 1: Yash ke bgl wala Pill (Top Pill) */
+    /* MOBILE PILL FIXES */
     .billboard h1 + span, 
-    .top-pill-class, /* Replace with your actual pill class name */
+    .top-pill-class,
     [class*="pill"] { 
-        font-size: 0.85rem !important; /* Increase from tiny to readable */
+        font-size: 0.85rem !important;
         padding: 4px 12px !important;
         margin-left: 10px !important;
         display: inline-block !important;
         vertical-align: middle;
     }
 
-    /* FIX 2: Details ke niche wale 3 pills (Bottom Group) */
-    .billboard-pills-container { /* Replace with your container class */
+    .billboard-pills-container { 
         display: flex;
-        flex-wrap: wrap; /* Taki mobile me line break le sakein */
+        flex-wrap: wrap; 
         gap: 10px;
         margin-top: 15px;
+        justify-content: flex-start;
     }
 
-    /* FIX 3: Text contrast (Jo vague lag raha hai) */
-    .billboard p {
-        font-size: 1.1rem !important;
-        line-height: 1.4;
-        color: rgba(255, 255, 255, 0.9); /* Pure white ke close takki clear dikhe */
-        font-weight: 400;
-    }
-
-    /* FIX 4: Metadata/Small Tags (Pills like Signal over Noise) */
+    /* Metadata Badges (Netflix Look) */
     .pill-item { 
-        font-size: 0.9rem !important; /* Size increase kiya */
-        font-weight: 600 !important; /* Boldness badhayi */
-        letter-spacing: 0.3px;
-        padding: 6px 14px !important; /* Pill ko thoda bada kiya */
-        background: rgba(255, 255, 255, 0.12) !important; 
-        border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Border thoda sharp kiya */
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        color: #fff !important;
+        background: rgba(128, 128, 128, 0.3) !important; 
+        border: 1.5px solid rgba(255, 255, 255, 0.4) !important; 
+        padding: 4px 12px !important;
+        border-radius: 4px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        backdrop-filter: blur(5px);
+        white-space: nowrap;
         display: inline-flex;
         align-items: center;
-        white-space: nowrap;
     }
 
-    /* Iske upar jo tagline hai usko bhi clear karne ke liye */
     .billboard .tagline {
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 1.5px;
+        font-size: 0.75rem !important;
+        font-weight: 900 !important;
+        letter-spacing: 2px;
         margin-bottom: 12px;
-        color: #e5e5e5;
+        color: #b3b3b3 !important;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
 }
-
 
 /* Small screen navbar adjustment */
 @media (max-width: 480px) {
@@ -322,6 +321,4 @@ body {
     .profile-gate h1 {
         font-size: 1.8rem !important;
     }
-} 
-
-
+}
