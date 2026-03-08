@@ -273,3 +273,69 @@ body {
         font-size: 1.8rem !important;
     }
 } 
+
+/* ========================================================
+ * FINAL MOBILE FIX (Yash's Portfolio)
+ * Ise file ke bilkul end mein paste karein.
+ * ======================================================== */
+
+@media screen and (max-width: 480px) {
+    /* 1. Billboard Heading (YASH) */
+    .billboard h1 {
+        font-size: 2.8rem !important;
+        margin-bottom: 10px !important;
+        letter-spacing: -1px;
+    }
+
+    /* 2. Innovation-Driven Pill (The one next to YASH) */
+    /* Targetting the first span/badge in billboard */
+    .billboard span:first-of-type, 
+    .innovation-tag, 
+    .badge-pill {
+        font-size: 10px !important;
+        padding: 5px 12px !important;
+        border: 1px solid rgba(255,255,255,0.4) !important;
+        background: rgba(255,255,255,0.1) !important;
+        display: inline-block !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px !important;
+        border-radius: 4px !important;
+    }
+
+    /* 3. Description Text (The Saga...) */
+    .billboard p {
+        font-size: 15px !important; /* Mobile readability fix */
+        line-height: 1.5 !important;
+        width: 100% !important;
+        color: #e5e5e5 !important;
+        margin-bottom: 25px !important;
+        opacity: 0.9;
+    }
+
+    /* 4. Bottom Tags (Signal over Noise, Zero Impedance) */
+    /* Targetting the small tags at the bottom of billboard */
+    .billboard .tags-row, 
+    .billboard-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        margin-top: 20px !important;
+    }
+
+    .billboard .tags-row span, 
+    .tech-tag, 
+    .bottom-pill {
+        font-size: 11px !important;
+        padding: 4px 10px !important;
+        border: 0.5px solid rgba(255,255,255,0.3) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 4px !important;
+        color: #aaa !important;
+    }
+
+    /* 5. Buttons Logic */
+    .billboard-buttons {
+        gap: 12px !important;
+    }
+}
