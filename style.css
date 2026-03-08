@@ -275,67 +275,70 @@ body {
 } 
 
 /* ========================================================
- * FINAL MOBILE FIX (Yash's Portfolio)
- * Ise file ke bilkul end mein paste karein.
+ * ULTRA-PRECISION MOBILE FIX (Netflix Aesthetic)
  * ======================================================== */
 
 @media screen and (max-width: 480px) {
-    /* 1. Billboard Heading (YASH) */
+    /* 1. Heading Alignment */
     .billboard h1 {
         font-size: 2.8rem !important;
-        margin-bottom: 10px !important;
-        letter-spacing: -1px;
+        margin-bottom: 8px !important;
+        display: block !important; /* Mobile pe standalone heading better hai */
     }
 
-    /* 2. Innovation-Driven Pill (The one next to YASH) */
-    /* Targetting the first span/badge in billboard */
-    .billboard span:first-of-type, 
-    .innovation-tag, 
-    .badge-pill {
+    /* 2. Innovation Pill (Top) */
+    .billboard .innovation-tag, 
+    .billboard h1 + span {
         font-size: 10px !important;
         padding: 5px 12px !important;
         border: 1px solid rgba(255,255,255,0.4) !important;
         background: rgba(255,255,255,0.1) !important;
         display: inline-block !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 15px !important;
+        margin-bottom: 20px !important;
         border-radius: 4px !important;
     }
 
-    /* 3. Description Text (The Saga...) */
-    .billboard p {
-        font-size: 15px !important; /* Mobile readability fix */
-        line-height: 1.5 !important;
-        width: 100% !important;
-        color: #e5e5e5 !important;
-        margin-bottom: 25px !important;
-        opacity: 0.9;
+    /* 3. "TRANSFORMING COMPLEXITY..." (Red Sub-heading) */
+    /* Isse bold aur sharp kiya hai taaki visibility clear ho */
+    .billboard .sub-text, 
+    .billboard p + span {
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        color: #E50914 !important; /* Netflix Red logic */
+        letter-spacing: 1.5px !important;
+        display: block !important;
+        margin: 20px 0 10px 0 !important;
+        text-transform: uppercase;
     }
 
-    /* 4. Bottom Tags (Signal over Noise, Zero Impedance) */
-    /* Targetting the small tags at the bottom of billboard */
+    /* 4. The Engineering Tags (Signal over Noise, etc.) */
+    /* Yahan flex-wrap aur correct gap diya hai */
     .billboard .tags-row, 
-    .billboard-tags {
+    .billboard div:last-child {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 8px !important;
-        margin-top: 20px !important;
+        gap: 10px !important;
+        margin-top: 10px !important;
     }
 
+    /* Targetting the pills precisely */
     .billboard .tags-row span, 
-    .tech-tag, 
-    .bottom-pill {
-        font-size: 11px !important;
-        padding: 4px 10px !important;
-        border: 0.5px solid rgba(255,255,255,0.3) !important;
-        background: rgba(0, 0, 0, 0.5) !important;
-        border-radius: 4px !important;
-        color: #aaa !important;
+    .billboard .tech-tag {
+        font-size: 10px !important;
+        padding: 6px 14px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important; /* Pill shape for bottom tags */
+        color: #ffffff !important;
+        white-space: nowrap !important;
     }
 
-    /* 5. Buttons Logic */
-    .billboard-buttons {
-        gap: 12px !important;
+    /* 5. Description Text (The Saga...) */
+    .billboard p {
+        font-size: 14.5px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        color: #d2d2d2 !important;
     }
 }
