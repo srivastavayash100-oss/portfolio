@@ -190,29 +190,73 @@ body {
 
 /* 8. MASTER RESPONSIVE BLOCK (Mobile Optimization) */
 @media (max-width: 768px) {
+    /* 1. Billboard Fix: Spacing aur alignment sahi karne ke liye */
     .billboard {
-        height: 70vh;
-        padding: 120px 6% 0 6% !important;
-        justify-content: flex-start;
+        min-height: 85vh !important; /* Screen ki puri height cover karega */
+        padding: 80px 6% 40px 6% !important; /* Upar se nav ke niche space */
+        justify-content: flex-end !important; /* Content ko thoda niche shift karega */
+        background-position: 35% center !important; /* Background image ko sahi se align karega */
     }
+
+    /* 2. Text Sizes: Bahut bade text ko control karne ke liye */
     .billboard h1 {
-        font-size: 2.2rem !important; 
+        font-size: 2.2rem !important; /* 'YASH' thoda compact */
+        margin-bottom: 5px !important;
     }
+
+    /* Tagline (Systems Thinker) fix */
+    .glow-chip {
+        font-size: 0.65rem !important;
+        padding: 4px 10px !important;
+        display: inline-block !important;
+        margin: 5px 0 15px 0 !important;
+    }
+
+    /* Description fix: Taaki read karne mein aasan ho */
     .billboard p {
-        font-size: 1.1rem !important;
-        max-width: 100%;
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+        color: #ddd !important;
     }
+
+    /* Tags (Signal over noise etc.) hide karna mobile pe better hai ya small karna */
+    .billboard-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 20px !important;
+    }
+    .billboard-tags span {
+        font-size: 0.6rem !important;
+        padding: 3px 8px !important;
+    }
+
+    /* 3. Buttons Fix: Screenshot mein buttons bahut chipke hain */
     .billboard-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .billboard-buttons button {
+        flex-direction: column !important; /* Ek ke niche ek button */
+        gap: 10px !important;
         width: 100%;
-        padding: 16px !important;
-        font-size: 1.1rem !important;
-        justify-content: center;
     }
-    
+
+    .billboard-buttons button {
+        width: 100% !important; /* Full width buttons for easy tap */
+        padding: 12px !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important; /* Rounded corners for modern look */
+        justify-content: center !important;
+    }
+
+    /* 4. Navbar Fix: Red 'YS' ko chota aur clean karne ke liye */
+    .nav-logo {
+        font-size: 1.4rem !important;
+    }
+    .nav-links {
+        font-size: 0.65rem !important;
+        gap: 10px !important;
+    }
+}    
     .row {
         padding-left: 6% !important;
     }
